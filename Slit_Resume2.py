@@ -290,28 +290,28 @@ with open(Pdf_Resume,'rb') as pdf_file:
 
 Profile_pic_i = Image.open(Profile_pic)
 
-password = open('Pwd.txt','r').read()
+# password = open('Pwd.txt','r').read()
 
 
 # In[38]:
 
 
-text_input_container = st.empty()
-t = text_input_container.text_input("Enter Password",type='password')
+# text_input_container = st.empty()
+# t = text_input_container.text_input("Enter Password",type='password')
 
 
-if t==password:
-    pass
-else:
-    if len(t)>0:
-        st.caption('Incorrect Password entered')
-    else:
-        st.write('Enter Password ...')
-        st.stop()
-    sys.exit()
+# if t==password:
+#     pass
+# else:
+#     if len(t)>0:
+#         st.caption('Incorrect Password entered')
+#     else:
+#         st.write('Enter Password ...')
+#         st.stop()
+#     sys.exit()
 
-if t != "":
-    text_input_container.empty()
+# if t != "":
+#     text_input_container.empty()
 
 
 # In[11]:
