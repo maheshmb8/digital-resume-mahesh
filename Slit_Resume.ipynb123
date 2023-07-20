@@ -1,0 +1,531 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 261,
+   "id": "7d7ffc7f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import nbformat\n",
+    "from nbconvert import PythonExporter\n",
+    "My_Loc = r'C:\\Users\\H895857\\adhoc_loc\\Self_Ana\\Streamlit_Resume'\n",
+    "def convertNotebook(notebookPath, modulePath):\n",
+    "\n",
+    "    with open(notebookPath) as fh:\n",
+    "        nb = nbformat.reads(fh.read(), nbformat.NO_CONVERT)\n",
+    "    exporter = PythonExporter()\n",
+    "    source, meta = exporter.from_notebook_node(nb)\n",
+    "    with open(modulePath, 'w+') as fh:\n",
+    "        fh.write(source)\n",
+    "        \n",
+    "convertNotebook(f'{My_Loc}\\Slit_Resume.ipynb',f'{My_Loc}\\Slit_Resume.py')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "e777b743",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\H895857\\.conda\\envs\\slit_mahesh\\lib\\site-packages\\snowflake\\connector\\options.py:94: UserWarning: You have an incompatible version of 'pyarrow' installed (6.0.1), please install a version that adheres to: 'pyarrow<5.1.0,>=5.0.0; extra == \"pandas\"'\n",
+      "  warn_incompatible_dep(\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "started at 2023-Jul-07 15:12:44\n"
+     ]
+    }
+   ],
+   "source": [
+    "#!/usr/bin/env python\n",
+    "import streamlit as st ######\n",
+    "from numerize import numerize \n",
+    "import matplotlib\n",
+    "import matplotlib.pyplot as plt\n",
+    "import emoji\n",
+    "import streamlit.components.v1 as components\n",
+    "from st_aggrid import AgGrid\n",
+    "from st_aggrid.grid_options_builder import GridOptionsBuilder\n",
+    "from PIL import Image\n",
+    "import pandas as pd\n",
+    "import datetime\n",
+    "import numpy as np\n",
+    "import sys as sys\n",
+    "import os\n",
+    "import glob\n",
+    "import time\n",
+    "from snowflake.sqlalchemy import URL\n",
+    "from sqlalchemy import create_engine\n",
+    "pd.set_option('display.max_rows', 500)\n",
+    "pd.set_option('display.max_columns', 500)\n",
+    "pd.set_option('display.width', 1000)\n",
+    "print('started at ' + datetime.datetime.today().strftime(\"%Y-%b-%d %H:%M:%S\"))\n",
+    "My_Loc = r'C:\\Users\\H895857\\adhoc_loc\\Self_Ana\\Streamlit_Resume'\n",
+    "os.chdir(f'{My_Loc}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 244,
+   "id": "c836fe0b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "so5_logo = Image.open(f\"{My_Loc}\\Resume_IC.png\")\n",
+    "Profile_pic = (f\"{My_Loc}\\Profile_Pic.jpeg\")\n",
+    "Pdf_Resume = (f\"{My_Loc}\\Mahesh Resume.pdf\")\n",
+    "#User Level Variables\n",
+    "First_Name = \"Mahesh\"\n",
+    "Last_Name = \"Bathija\"\n",
+    "Full_Name = First_Name+' '+Last_Name\n",
+    "Current_Designation = \"Team Lead\"\n",
+    "Current_Team = \"Fraud Analytics\"\n",
+    "Current_Organization = \"Hudson's Bay Company\"\n",
+    "Current_Org_from = \"09/2020\"\n",
+    "Email = \"maheshmbathija81193@gmail.com\"\n",
+    "Phone = \"+91 8951861604\"\n",
+    "Linkedin_URL = \"https://www.linkedin.com/in/maheshm8\"\n",
+    "Location = \"Bangalore, India\"\n",
+    "\n",
+    "\n",
+    "Skills = ['Python','SQL','Tableau','Excel','Streamlit','Statistics','Selenium']\n",
+    "\n",
+    "Higest_Education = \"MBA\"\n",
+    "HE_University = \"Jain University\"\n",
+    "HE_Location = \"Bangalore, India\"\n",
+    "HE_From = \"2016\"\n",
+    "HE_To = \"2019\"\n",
+    "\n",
+    "Profile = \"\"\"With over 8 years of expertise in Fraud Analytics and Abuse Prevention, I possess a strong \n",
+    "command of analytical tools like SQL and Python. I adeptly utilize advanced analytical \n",
+    "techniques to actively and passively identify instances of Fraud and Abuse, while also \n",
+    "deriving valuable insights from the data. I maintain regular communication with \n",
+    "stakeholders to effectively mitigate these risks and implement proactive policies to prevent \n",
+    "future occurrences. By leveraging my extensive experience and skill set, I continuously strive \n",
+    "to enhance the detection and prevention of Fraud and Abuse, ensuring a secure and \n",
+    "trustworthy environment for all.\n",
+    "\"\"\"\n",
+    "\n",
+    "Short_Headline = \"\"\"Fraud Analytics Expert | Leveraging 8+ Years of Experience in Detecting Fraud and Non Fraud Risk | ex-Amazon | ex-Tesco\"\"\"\n",
+    "\n",
+    "Awards = {\n",
+    "    \"Prime Player Award\" : {\n",
+    "        \"Organization\" : \"Saks Off Fifth\",\n",
+    "        \"Year\" : \"2022\",\n",
+    "        \"Month\" : \"12\"\n",
+    "    },\n",
+    "    \"Investigator Of Month\" : {\n",
+    "        \"Organization\" : \"Amazon\",\n",
+    "        \"Year\" : \"2015\",\n",
+    "        \"Month\" : \"07\"\n",
+    "    }\n",
+    "}\n",
+    "\n",
+    "ORG1_Details = \"\"\"About Fraud Analytics Team – Detecting fraud, boosting revenue through trend identification and mitigation\"\"\"\n",
+    "ORG2_Details = \"\"\"About T&S Team – focuses on combating fraud for online marketplace and Logistics Fraud.\"\"\"\n",
+    "ORG3_Details = \"\"\"About Fraud Prevention Team – Fraud prevention for offline and online employees and customers\"\"\"\n",
+    "ORG4_Details = \"\"\"About TRMS – Screen customer orders for fraud to prevent chargebacks and protect customers\"\"\"\n",
+    "\n",
+    "Professional_Experience = {\n",
+    "    \"ORG1\" : {\n",
+    "        \"Company Name\" : \"Hudson's Bay Company\",\n",
+    "        \"URL\" : \"\",\n",
+    "        \"Role Name\" : \"Team Lead, Fraud Analytics\",\n",
+    "        \"From\" : \"09/2020\",\n",
+    "        \"To\" : \"Present\",\n",
+    "        \"Job Location\" : \"Bangalore, India\",\n",
+    "        \"Role Details\" : ORG1_Details,\n",
+    "        \"Key Projects\" : {\"Project_1\" : {\n",
+    "            \"Project Name\" : \"Customer Risk Scorecard\",\n",
+    "            \"Details\" : \"\"\"To understand how risky/good a customer is; This tool provides a complete view of customers, including sales, returns, chargebacks, promos, fake returns, risk scores, demographics, and address history. It is an all-in-one tool for customer information, providing a single view of the customer across all channels and touchpoints.\"\"\",\n",
+    "            \"Savings\" : \"approx. $3M and 200hrs Monthly\",\n",
+    "            \"Tools\" : \"Python | VBA | SQL | Streamlit | Tableau\"\n",
+    "        },\n",
+    "                         \"Project_2\" : {\n",
+    "            \"Project Name\" : \"Promo-Code Reduction Analysis\",\n",
+    "            \"Details\" : \"\"\"identifying revenue reducing promo-codes and tracking agents for corrective action. Detected and dismissed agent involved in collusion\"\"\",\n",
+    "            \"Savings\" : \"$900k for 6 Months\",\n",
+    "            \"Tools\" : \"Python | Snowflake\"\n",
+    "        },\n",
+    "                         \"Project_3\" : {\n",
+    "            \"Project Name\" : \"Self Serve Dashboards\",\n",
+    "            \"Details\" : \"\"\"successfully developed self-serve dashboards that serve as comprehensive platforms to efficiently manage and assess risk across various customer and employee segments. These intuitive dashboards provide a centralized hub for monitoring high-risk individuals at different levels, including loyalty, returns, promo-codes, missing-package claims, gift card fraud, bulk buyers, and warehouse audits. By consolidating this information into a single interface, stakeholders can easily access and analyze critical data, enabling proactive risk mitigation strategies. These user-friendly dashboards enhance decision-making processes and empower teams to take swift actions, ensuring a robust risk management framework for the organization.\"\"\",\n",
+    "            \"Savings\" : \"approx. 50hrs Monthly\",\n",
+    "            \"Tools\" : \"Snowflake | Tableau | Python\"\n",
+    "        },\n",
+    "                         \"Project_4\" : {\n",
+    "            \"Project Name\" : \"Daily/Weekly Report automation\",\n",
+    "            \"Details\" : \"\"\"automated daily fraud report generation using Selenium in Python, including sign-in, browsing, exporting, graph building, and emailing\"\"\",\n",
+    "            \"Savings\" : \"approx. 20hrs Monthly\",\n",
+    "            \"Tools\" : \"Selenium | Python\"\n",
+    "        }\n",
+    "                         }\n",
+    "    },\n",
+    "    \"ORG2\" : {\n",
+    "        \"Company Name\" : \"Myntra\",\n",
+    "        \"URL\" : \"\",\n",
+    "        \"Role Name\" : \"Associate, Trust & Safety\",\n",
+    "        \"From\" : \"10/2019\",\n",
+    "        \"To\" : \"09/2020\",\n",
+    "        \"Job Location\" : \"Bangalore, India\",\n",
+    "        \"Role Details\" : ORG2_Details,\n",
+    "        \"Key Projects\" : {\"Project_1\" : {\n",
+    "            \"Project Name\" : \"Anomaly Detection Modules\",\n",
+    "            \"Details\" : \"\"\"Developed multiple anomaly detection modules that are executed daily by the operations team. These modules identify high-value risky orders in real-time, promptly alerting the risk team for immediate corrective action. Additionally, the modules detect customers who repeatedly purchase risky items in high quantity and customers with bank-declined orders, ensuring proactive risk mitigation and enhanced fraud prevention measures.\"\"\",\n",
+    "            \"Savings\" : \"approx. 30L Monthly\",\n",
+    "            \"Tools\" : \"Python | SQL\"\n",
+    "        },\n",
+    "                         \"Project_2\" : {\n",
+    "            \"Project Name\" : \"Fake Returns Mitigation Report\",\n",
+    "            \"Details\" : \"\"\"Developed an advanced Fake Returns Model that analyzes customer, pickup/return point, and courier data to identify high-risk identities. By leveraging synergistic multiple datasets, the model generates actionable insights enabling the business to take proactive measures such as deactivating risky customers or stores, minimizing losses, and optimizing operational efficiency.\"\"\",\n",
+    "            \"Savings\" : \"approx. 50L Monthly\",\n",
+    "            \"Tools\" : \"Python | SQL\"\n",
+    "        }\n",
+    "                         }\n",
+    "    },\n",
+    "    \"ORG3\" : {\n",
+    "        \"Company Name\" : \"Tesco\",\n",
+    "        \"URL\" : \"\",\n",
+    "        \"Role Name\" : \"Senior Analyst, Fraud Prevention\",\n",
+    "        \"From\" : \"08/2016\",\n",
+    "        \"To\" : \"10/2019\",\n",
+    "        \"Job Location\" : \"Bangalore, India\",\n",
+    "        \"Role Details\" : ORG3_Details,\n",
+    "        \"Key Projects\" : {\"Project_1\" : {\n",
+    "            \"Project Name\" : \"Transformed 3rd party risk detection monitors\",\n",
+    "            \"Details\" : \"\"\"converted Monitors into SQL queries, enabling greater customization andreducing reliance on external tools\"\"\",\n",
+    "            \"Savings\" : \"approx. £50000 one time\",\n",
+    "            \"Tools\" : \"Python | SQL\"\n",
+    "        },\n",
+    "                         \"Project_2\" : {\n",
+    "            \"Project Name\" : \"Fraud rules Analysis\",\n",
+    "            \"Details\" : \"\"\"reduced false referrals by 70%, identifying critical and non-critical monitors and optimizing manual investigations\"\"\",\n",
+    "            \"Savings\" : \"20hrs Monthly & £20000 Monthly\",\n",
+    "            \"Tools\" : \"Python | SQL\"\n",
+    "        }\n",
+    "                         }\n",
+    "    },\n",
+    "    \"ORG4\" : {\n",
+    "        \"Company Name\" : \"Amazon\",\n",
+    "        \"URL\" : \"\",\n",
+    "        \"Role Name\" : \"Risk Investigator, TRMS\",\n",
+    "        \"From\" : \"07/2014\",\n",
+    "        \"To\" : \"01/2014\",\n",
+    "        \"Job Location\" : \"Bangalore, India\",\n",
+    "        \"Role Details\" : ORG4_Details,\n",
+    "        \"Key Projects\" : {\"Project_1\" : {\n",
+    "            \"Project Name\" : '',\n",
+    "            \"Details\" : '',\n",
+    "            \"Savings\" : '',\n",
+    "            \"Tools\" : ''\n",
+    "        }\n",
+    "                         }\n",
+    "    }\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 258,
+   "id": "edbd2254",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Other Variables\n",
+    "email_emoji = emoji.emojize(':envelope:')\n",
+    "phone_emoji = emoji.emojize(':mobile_phone:')\n",
+    "Linkedin_URL_emoji = emoji.emojize(':link:')\n",
+    "Location_emoji = emoji.emojize(':round_pushpin:')\n",
+    "\n",
+    "Coding_emoji = emoji.emojize(':man_technologist:')\n",
+    "sheet_emoji = emoji.emojize(':page_facing_up:')\n",
+    "chart_emoji = emoji.emojize(':bar_chart:')\n",
+    "books_emoji = emoji.emojize(':books:')\n",
+    "savings_emoji = emoji.emojize(':moneybag:')\n",
+    "tools_emoji = emoji.emojize(':gear:')\n",
+    "details_emoji = emoji.emojize(':information_source:')\n",
+    "download_resume_emoji = emoji.emojize(':memo:')\n",
+    "\n",
+    "profile_emoji = emoji.emojize(':male-detective:')\n",
+    "skills_emoji = emoji.emojize(':toolbox:')\n",
+    "workexp_emoji = emoji.emojize(':briefcase:')\n",
+    "education_emoji = emoji.emojize(':mortar_board:')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 145,
+   "id": "ef4573d2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "DeltaGenerator(_root_container=0, _provided_cursor=None, _parent=None, _block_type=None, _form_data=None)"
+      ]
+     },
+     "execution_count": 145,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Streamlit top Markdows\n",
+    "st.set_page_config(page_title=First_Name+' Resume', page_icon=so5_logo,layout=\"wide\")\n",
+    "st.markdown(\"\"\" <style>\n",
+    "#MainMenu {visibility: hidden;}\n",
+    "footer {visibility: hidden;}\n",
+    "</style> \"\"\", unsafe_allow_html=True)\n",
+    "st.markdown(\"\"\"\n",
+    "        <style>\n",
+    "               .css-18e3th9 {\n",
+    "                    padding-top: 0rem;\n",
+    "                    padding-bottom: 10rem;\n",
+    "                    padding-left: 5rem;\n",
+    "                    padding-right: 5rem;\n",
+    "                }\n",
+    "               .css-1d391kg {\n",
+    "                    padding-top: 0rem;\n",
+    "                    padding-right: 1rem;\n",
+    "                    padding-bottom: 3.5rem;\n",
+    "                    padding-left: 1rem;\n",
+    "                }\n",
+    "        </style>\n",
+    "        \"\"\", unsafe_allow_html=True)\n",
+    "\n",
+    "st.markdown(\"\"\"\n",
+    "    <style>\n",
+    "    [data-testid=column]:nth-of-type(1) [data-testid=stVerticalBlock]{\n",
+    "        gap: 0rem;\n",
+    "    }\n",
+    "    </style>\n",
+    "    \"\"\",unsafe_allow_html=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 112,
+   "id": "71718c5b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "DeltaGenerator(_root_container=0, _provided_cursor=None, _parent=None, _block_type=None, _form_data=None)"
+      ]
+     },
+     "execution_count": 112,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# col1,col2 = st.columns(2)\n",
+    "# col2.markdown(\"<h1 style='text-align: right; color: black;'>\"+Full_Name+\"</h1>\", unsafe_allow_html=True)\n",
+    "\n",
+    "# col3,col4 = st.columns([2.5,1])\n",
+    "# col4.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:15px;margin-bottom:0;text-align:center;\"> '+email_emoji+' '+Email+' </p>',unsafe_allow_html=True)\n",
+    "# col4.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:15px;margin-bottom:0;text-align:center;\"> '+phone_emoji+' '+Phone+' </p>',unsafe_allow_html=True)\n",
+    "# col4.markdown(f'<p style=\"background-color:#ffffff;color:#0072b1;font-size:15px;margin-bottom:0;text-align:center;\"> '+luggage_emoji+' '+Linkedin_URL+' </p>',unsafe_allow_html=True)\n",
+    "# col4.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:15px;margin-bottom:0;text-align:center;\"> '+pushpin_emoji+' '+Location+' </p>',unsafe_allow_html=True)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "ed320ed7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open(Pdf_Resume,'rb') as pdf_file:\n",
+    "    Pdf_Resume_bn = pdf_file.read()\n",
+    "\n",
+    "Profile_pic_i = Image.open(Profile_pic)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 246,
+   "id": "dc79d59b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "col1, col2 = st.columns([2,7])\n",
+    "with col1:\n",
+    "    st.caption('#')\n",
+    "    st.image(Profile_pic_i, width=230)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 259,
+   "id": "3cfcd5b3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with col2:\n",
+    "    st.title(Full_Name)\n",
+    "    st.write(Short_Headline)\n",
+    "    st.download_button(\n",
+    "        label=download_resume_emoji+\" Download Resume\",\n",
+    "        data=Pdf_Resume_bn,\n",
+    "        file_name=First_Name+' Resume.pdf',\n",
+    "        mime=\"application/octet-stream\",\n",
+    "    )\n",
+    "    st.write(email_emoji, Email,'|',phone_emoji,Phone)\n",
+    "    st.write(Linkedin_URL_emoji, Linkedin_URL,'|',Location_emoji,Location)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "b948bc1e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Profile\n",
+    "st.subheader(profile_emoji+\" Profile\")\n",
+    "st.write(Profile)\n",
+    "st.subheader(skills_emoji+\" Skills\")\n",
+    "st.write(\"\"\"\n",
+    "- \"\"\"+Coding_emoji+\"\"\" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬\n",
+    "- \"\"\"+Coding_emoji+\"\"\" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★\n",
+    "- \"\"\"+chart_emoji+\"\"\" Excel | ★★★★✬\n",
+    "- \"\"\"+chart_emoji+\"\"\" Tableau | ★★★★\n",
+    "- \"\"\"+chart_emoji+\"\"\" MicroStrategy | ★★★\n",
+    "- \"\"\"+books_emoji+\"\"\" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬\n",
+    "\"\"\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 240,
+   "id": "fdffa88f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "st.subheader(workexp_emoji+\" Work Experience\")\n",
+    "# st.markdown(f'<p style=\"background-color:#ffffff;color:#091848;font-size:20px;margin-bottom:0;text-align:left;\"><b> Hudson Bay Company </b></p>',unsafe_allow_html=True)\n",
+    "for i in Professional_Experience.keys():\n",
+    "    l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))\n",
+    "    l2=(Professional_Experience[i]['From'],'-',Professional_Experience[i]['To'],'|',Professional_Experience[i]['Job Location'])\n",
+    "    l3=(Professional_Experience[i]['Role Details'])\n",
+    "    st.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:18px;margin-bottom:0;text-align:left;\"><b> '+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)\n",
+    "    st.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:13px;margin-bottom:0;text-align:left;\"><b> '+Professional_Experience[i]['From']+'-'+Professional_Experience[i]['To']+' | '+Professional_Experience[i]['Job Location']+' </b></p>',unsafe_allow_html=True)\n",
+    "    st.caption(Professional_Experience[i]['Role Details'])\n",
+    "    for j in Professional_Experience[i]['Key Projects']:\n",
+    "        if Professional_Experience[i]['Key Projects'][j]['Project Name'] != '':\n",
+    "            l4 = Professional_Experience[i]['Key Projects'][j]['Project Name']\n",
+    "            l5 = Professional_Experience[i]['Key Projects'][j]['Details']\n",
+    "            l6 = Professional_Experience[i]['Key Projects'][j]['Savings']\n",
+    "            l7 = Professional_Experience[i]['Key Projects'][j]['Tools']\n",
+    "            col3,col4 = st.columns([1,40])\n",
+    "            col4.write('- '+l4)\n",
+    "            with st.expander(\"See explanation\"):\n",
+    "                st.caption(details_emoji+' : '+l5)\n",
+    "                st.caption(savings_emoji+' : '+l6)\n",
+    "                st.caption(tools_emoji+' : '+l7)\n",
+    "    st.caption('')\n",
+    "# ![image info](./pictures/image.png)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 243,
+   "id": "163e9cc1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "DeltaGenerator(_root_container=0, _provided_cursor=None, _parent=None, _block_type=None, _form_data=None)"
+      ]
+     },
+     "execution_count": 243,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "st.subheader(education_emoji+\" Education\")\n",
+    "st.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:18px;margin-bottom:0;text-align:left;\"><b> '+Higest_Education+' ,'+HE_University+' </b></p>',unsafe_allow_html=True)\n",
+    "st.markdown(f'<p style=\"background-color:#ffffff;color:#000000;font-size:13px;margin-bottom:0;text-align:left;\"><b> '+HE_From+'-'+HE_To+' | '+HE_Location+' </b></p>',unsafe_allow_html=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 218,
+   "id": "207c9264",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# for i in Professional_Experience.keys():\n",
+    "#     for j in Professional_Experience[i]['Key Projects']:\n",
+    "#         l4 = Professional_Experience[i]['Key Projects'][j]['Project Name']\n",
+    "#         l5 = Professional_Experience[i]['Key Projects'][j]['Details']\n",
+    "#         l6 = Professional_Experience[i]['Key Projects'][j]['Savings']\n",
+    "#         l7 = Professional_Experience[i]['Key Projects'][j]['Tools']\n",
+    "#         print(' ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 251,
+   "id": "f2b584e5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import nbformat\n",
+    "from nbconvert import PythonExporter\n",
+    "My_Loc = r'C:\\Users\\H895857\\adhoc_loc\\Self_Ana\\Streamlit_Resume'\n",
+    "def convertNotebook(notebookPath, modulePath):\n",
+    "\n",
+    "    with open(notebookPath) as fh:\n",
+    "        nb = nbformat.reads(fh.read(), nbformat.NO_CONVERT)\n",
+    "    exporter = PythonExporter()\n",
+    "    source, meta = exporter.from_notebook_node(nb)\n",
+    "    with open(modulePath, 'w+') as fh:\n",
+    "        fh.write(source)\n",
+    "        \n",
+    "convertNotebook(f'{My_Loc}\\Slit_Resume.ipynb',f'{My_Loc}\\Slit_Resume.py')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 152,
+   "id": "07a2156a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

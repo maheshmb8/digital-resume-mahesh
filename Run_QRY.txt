@@ -1,0 +1,30 @@
+conda activate st_dev
+cd C:\Users\mahes\Streamlit_Resume
+streamlit run Slit_Resume2.py --server.enableCORS=false --server.enableWebsocketCompression=false --server.enableXsrfProtection=false --server.port=80
+
+conda activate st_dev
+cd C:\Users\mahes\Streamlit_Resume
+streamlit run Slit_Resume2.py --server.enableCORS=false --server.enableXsrfProtection=false
+streamlit run Slit_Resume2.py
+
+
+
+
+http://localhost:8889/notebooks/adhoc_loc/Self_Ana/Streamlit_Resume/Slit_Resume.ipynb
+
+conda activate slit_mahesh
+cd C:\Users\H895857\adhoc_loc\Self_Ana\Streamlit_Resume
+streamlit run Slit_Resume.py
+
+
+conda activate slit_mahesh
+cd C:\Users\H895857\adhoc_loc\Self_Ana\Streamlit_Resume
+streamlit run Slit_Resume2.py
+
+
+conda activate slit_mahesh
+cd C:\Users\H895857\adhoc_loc\Self_Ana\Streamlit_Resume
+streamlit run Slit_Resume2.py --server.enableCORS=false --server.enableWebsocketCompression=false
+
+
+#313d5d

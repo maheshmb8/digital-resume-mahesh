@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+
+* {font-family: 'Readex Pro';}
+
+a {
+    text-decoration: none;
+    color: white !important;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #d33682 !important;
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5%;
+}
+
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+
+.css-18e3th9 {
+    padding-top: 0rem;
+    padding-bottom: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.css-1d391kg {
+    padding-top: 0rem;
+    padding-right: 1rem;
+    padding-bottom: 3.5rem;
+    padding-left: 1rem;
+}
+
+[data-testid=column]:nth-of-type(1) [data-testid=stVerticalBlock]{
+    gap: 0rem;
+}
+
+.element-container:nth-child(3) .overlayBtn {visibility: hidden;}
+.element-container:nth-child(12) .overlayBtn {visibility: hidden;}
+
+button[title="View fullscreen"]{
+    visibility: hidden;}
