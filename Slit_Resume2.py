@@ -30,6 +30,18 @@ import datetime
 import sys as sys
 import os
 import glob
+import socket
+import uuid
+import datetime
+hostname=socket.gethostname()
+IPAddr=socket.gethostbyname(hostname)
+uuid_str = uuid.uuid1()
+time_str = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+ano_data = ['HN: ',hostname,'IP: ',IPAddr,'UUID: ',uuid_str,'Time: ',time_str]
+
+with open(r'Data_Ref.txt', 'a') as fp:
+    fp.write("\n"+str(ano_data))
+    fp.close()
 
 
 # In[23]:
