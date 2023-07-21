@@ -199,7 +199,7 @@ Professional_Experience = {
 email_emoji = emoji.emojize(':envelope:')
 phone_emoji = emoji.emojize(':mobile_phone:')
 Linkedin_URL_emoji = emoji.emojize(':link:')
-Location_emoji = emoji.emojize(':round_pushpin:')
+Location_emoji = emoji.emojize(':house:')
 birthday_emoji = emoji.emojize(':birthday_cake:')
 
 Coding_emoji = emoji.emojize(':man_technologist:')
