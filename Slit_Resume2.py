@@ -368,7 +368,7 @@ with tab1:
     # Work Experience
 
     st.subheader(workexp_emoji+" Work Experience")
-    st.write(right_point_emoji+" for Project details, scroll up & visit next tab")
+    st.write(right_point_emoji+" for Project details, visit next tab")
     for i in Professional_Experience.keys():
         l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))
         l2=(Professional_Experience[i]['From'],'-',Professional_Experience[i]['To'],'|',Professional_Experience[i]['Job Location'])
