@@ -51,4 +51,5 @@ button[title="View fullscreen"]{
   width: 100%; /* Full width */}
 .main {
   margin-top: 45px; /* Add a top margin to avoid content overlay */
+  overflow: auto;
 }
