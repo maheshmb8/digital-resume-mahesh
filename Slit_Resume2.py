@@ -89,7 +89,7 @@ Awards = {
 }
 
 ORG1_Details = """About Fraud Analytics Team – Detecting fraud, boosting revenue through trend identification and mitigation
-- Led a successful team of 2 analysts, collaborating on multiple projects and cutting false referrals by 35%."""
+Led a successful team of 2 analysts, collaborating on multiple projects and cutting false referrals by 35%."""
 ORG2_Details = """About T&S Team – focuses on combating fraud for online marketplace and Logistics Fraud."""
 ORG3_Details = """About Fraud Prevention Team – Fraud prevention for offline and online employees and customers"""
 ORG4_Details = """About TRMS – Screen customer orders for fraud to prevent chargebacks and protect customers"""
