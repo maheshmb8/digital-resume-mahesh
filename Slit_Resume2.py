@@ -198,7 +198,7 @@ Professional_Experience = {
 # Other Variables
 email_emoji = emoji.emojize(':envelope:')
 phone_emoji = emoji.emojize(':telephone_receiver:')
-Linkedin_URL_emoji = emoji.emojize(':up_right_arrow:')
+Linkedin_URL_emoji = emoji.emojize(':arrow_upper_right:')
 Location_emoji = emoji.emojize(':house:')
 birthday_emoji = emoji.emojize(':birthday_cake:')
 
