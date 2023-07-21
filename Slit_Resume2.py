@@ -199,7 +199,7 @@ Professional_Experience = {
 email_emoji = emoji.emojize(':envelope:')
 phone_emoji = emoji.emojize(':telephone_receiver:')
 Linkedin_URL_emoji = emoji.emojize(':arrow_upper_right:')
-Linkedin_URL_emoji = "\U000FE0F"
+Linkedin_URL_emoji = "\U0001FE0F"
 # \U000FE0F
 Location_emoji = emoji.emojize(':house:')
 birthday_emoji = emoji.emojize(':birthday_cake:')
