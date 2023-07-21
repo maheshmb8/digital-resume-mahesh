@@ -48,6 +48,7 @@ button[title="View fullscreen"]{
 .stTabs [data-baseweb="tab-list"] {
   position: fixed; /* Set the navbar to fixed position */
   z-index: 999; /* So that it is not under the other elements */
+  -webkit-transform: translateZ(0);
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */}
 .main {
