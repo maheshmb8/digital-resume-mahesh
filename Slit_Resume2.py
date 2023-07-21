@@ -347,7 +347,7 @@ with tab1:
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+birthday_emoji+' '+birthdate+'</p>',unsafe_allow_html=True)
 #         st.write(email_emoji, Email,'|',phone_emoji,Phone)
 #         st.write(Linkedin_URL_emoji, Linkedin_URL,'|',Location_emoji,Location)
-    
+    st.divider()
     # About Streamlit Resume
     st.subheader(details_emoji_2+"  E-Resume Information")
     st.write(E_resume)
