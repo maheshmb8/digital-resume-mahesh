@@ -330,9 +330,9 @@ tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", project_emoji+" Projects"])
 # time_str = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
 # ano_data = ['HN: ',hostname,'IP: ',IPAddr,'UUID: ',uuid_str,'Time: ',time_str]
 
-with open(r'Data_Ref.txt', 'a') as fp:
-    fp.write("\n"+str(ano_data))
-    fp.close()
+# with open(r'Data_Ref.txt', 'a') as fp:
+#     fp.write("\n"+str(ano_data))
+#     fp.close()
 
 # Resume Front
 with tab1:
