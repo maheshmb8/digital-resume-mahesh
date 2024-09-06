@@ -262,6 +262,7 @@ details_emoji_2 = "\U0001F6C8"
 pen_emoji = emoji.emojize(':pen:')
 
 right_point_emoji = emoji.emojize(':backhand_index_pointing_right:')
+left_point_emoji = emoji.emojize(':backhand_index_pointing_left:')
 
 
 # In[30]:
@@ -416,7 +417,7 @@ with tab1:
     # Work Experience
 
     st.subheader(workexp_emoji+" Work Experience")
-    st.write(right_point_emoji+" for Project details, visit next tab")
+    st.write(right_point_emoji+right_point_emoji+" for Project details, visit next tab"+left_point_emoji+left_point_emoji)
     for i in Professional_Experience.keys():
         l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))
         l2=(Professional_Experience[i]['From'],'-',Professional_Experience[i]['To'],'|',Professional_Experience[i]['Job Location'])
