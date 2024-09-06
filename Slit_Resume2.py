@@ -84,19 +84,18 @@ HE_Location = "Bangalore, India"
 HE_From = "2016"
 HE_To = "2019"
 
-Profile = f"""With over {str(Experience_yrs)}+ years of expertise in Fraud Analytics, Abuse Prevention & Quant Analytics, I possess a strong 
+Profile = f"""With over {str(Experience_yrs)} + years of expertise in Fraud Analytics, Abuse Prevention & Quant Analytics, I possess a strong 
 command of analytical tools like SQL and Python. I adeptly utilize advanced analytical 
 techniques to actively and passively identify instances of Fraud and Abuse, while also 
 deriving valuable insights from the data. I maintain regular communication with 
 stakeholders to effectively mitigate these risks and implement proactive policies to prevent 
 future occurrences. By leveraging my extensive experience and skill set, I continuously strive 
 to enhance the detection and prevention of Fraud and Abuse, ensuring a secure and 
-trustworthy environment for all.
-"""
+trustworthy environment for all."""
 
 E_resume = """I have created this impressive "E-Resume" using Python and the Streamlit Framework. It serves as a platform to showcase my exceptional Python and Streamlit skillsets. The first tab elegantly presents my detailed resume, while the second tab showcases a collection of my accomplished projects, reflecting my proficiency and experience."""
 
-Short_Headline = """Fraud Analytics Expert | Leveraging {str(Experience_yrs)}+ Years of Experience in Detecting Fraud and Non Fraud Risk | ex-Amazon | ex-Tesco"""
+Short_Headline = f"""Fraud Analytics Expert | Leveraging {str(Experience_yrs)}+ Years of Experience in Detecting Fraud and Non Fraud Risk | ex-Amazon | ex-Tesco"""
 
 Awards = {
     "Prime Player Award" : {
