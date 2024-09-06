@@ -1,0 +1,2 @@
+122.172.85.195,Bengaluru,Karnataka,IN,AS24560 Bharti Airtel Ltd., Telemedia Services,Asia/Kolkata,abts-kk-dynamic-195.85.172.122.airtelbroadband.in,2024-09-06 18:44:37
+122.172.85.195,Bengaluru,Karnataka,IN,AS24560 Bharti Airtel Ltd., Telemedia Services,Asia/Kolkata,abts-kk-dynamic-195.85.172.122.airtelbroadband.in,2024-09-06 18:44:37
