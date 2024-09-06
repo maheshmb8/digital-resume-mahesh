@@ -61,7 +61,7 @@ so5_logo = Image.open(f"Resume_IC.png")
 Profile_pic = (f"Profile_Pic.png")
 Pdf_Resume = (f"Mahesh Resume.pdf")
 #User Level Variables
-First_Name = "Mahesh"
+First_Name = "Mahesh M"
 Last_Name = "Bathija"
 Full_Name = First_Name+' '+Last_Name
 Current_Designation = "Team Lead"
