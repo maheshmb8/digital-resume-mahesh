@@ -36,25 +36,25 @@ import requests
 
 # In[23]:
 
-response = requests.get('https://ipinfo.io')
-data = response.json()
-# Extract relevant data
-ip_address = data['ip']
-city = data['city']
-region = data['region']
-country = data['country']
-isp = data.get('org', 'Unknown')
-timezone = data.get('timezone', 'Unknown')
-hostname = data.get('hostname', 'Unknown')
-organization = data.get('org', 'Unknown')
-visit_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-txt_file_path = 'visitor_data.txt'
+# response = requests.get('https://ipinfo.io')
+# data = response.json()
+# # Extract relevant data
+# ip_address = data['ip']
+# city = data['city']
+# region = data['region']
+# country = data['country']
+# isp = data.get('org', 'Unknown')
+# timezone = data.get('timezone', 'Unknown')
+# hostname = data.get('hostname', 'Unknown')
+# organization = data.get('org', 'Unknown')
+# visit_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+# txt_file_path = 'visitor_data.txt'
 
-# Append the data to the text file in a comma-separated format
-with open(txt_file_path, mode='a') as file:
-    # Create a single line of comma-separated values
-    line = f"{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
-    file.write(line)
+# # Append the data to the text file in a comma-separated format
+# with open(txt_file_path, mode='a') as file:
+#     # Create a single line of comma-separated values
+#     line = f"{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
+#     file.write(line)
 
 
 so5_logo = Image.open(f"Resume_IC.png")
