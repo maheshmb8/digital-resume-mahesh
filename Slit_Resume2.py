@@ -122,7 +122,7 @@ Professional_Experience = {
 "ORG0": {
     "Company Name": "Stock Vertex Ventures",
     "URL": "",
-    "Role Name": "Team Lead, Algotrading Analytics",
+    "Role Name": "Team Lead, Quant Analytics",
     "From": "02/2024",
     "To": "Present",
     "Job Location": "Bangalore, India",
@@ -432,7 +432,7 @@ with tab1:
         l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))
         l2=(Professional_Experience[i]['From'],'-',Professional_Experience[i]['To'],'|',Professional_Experience[i]['Job Location'])
         l3=(Professional_Experience[i]['Role Details'])
-        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+':office:'+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:13px;margin-bottom:0;text-align:left;"><b> '+Professional_Experience[i]['From']+'-'+Professional_Experience[i]['To']+' | '+Professional_Experience[i]['Job Location']+' </b></p>',unsafe_allow_html=True)
         st.caption(Professional_Experience[i]['Role Details'])
         for j in Professional_Experience[i]['Key Projects']:
