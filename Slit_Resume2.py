@@ -35,27 +35,44 @@ import requests
 
 
 # In[23]:
+bot_token = '7470750444:AAEVSp9woUIREXs7RiBmgRgaQF9S4NGMNj4'
+chat_id = 704541819
+def telegram_send_message(message,bot_token=bot_token,chat_id = chat_id):
+    """
+    Sends a message via Telegram bot API.
 
-# response = requests.get('https://ipinfo.io')
-# data = response.json()
-# # Extract relevant data
-# ip_address = data['ip']
-# city = data['city']
-# region = data['region']
-# country = data['country']
-# isp = data.get('org', 'Unknown')
-# timezone = data.get('timezone', 'Unknown')
-# hostname = data.get('hostname', 'Unknown')
-# organization = data.get('org', 'Unknown')
-# visit_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-# txt_file_path = 'visitor_data.txt'
+    Args:
+    - bot_token (str): The API token of your Telegram bot.
+    - chat_id (int or str): The chat ID where the message should be sent. 
+                            Use negative values for group chat IDs.
+    - message (str): The message to be sent.
+    
+    Returns:
+    - dict: JSON response from the Telegram API.
+    """
+    url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
+    params = {
+        'chat_id': chat_id,
+        'text': message
+    }
+    response = requests.get(url, params=params)
+    return response.json()
 
-# # Append the data to the text file in a comma-separated format
-# with open(txt_file_path, mode='a') as file:
-#     # Create a single line of comma-separated values
-#     line = f"{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
-#     file.write(line)
-
+response = requests.get('https://ipinfo.io')
+data = response.json()
+# Extract relevant data
+ip_address = data['ip']
+city = data['city']
+region = data['region']
+country = data['country']
+isp = data.get('org', 'Unknown')
+timezone = data.get('timezone', 'Unknown')
+hostname = data.get('hostname', 'Unknown')
+organization = data.get('org', 'Unknown')
+visit_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+txt_file_path = 'visitor_data.txt'
+line = f"DR,{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
+telegram_send_message(message=line)
 
 so5_logo = Image.open(f"Resume_IC.png")
 Profile_pic = (f"Profile_Pic.png")
