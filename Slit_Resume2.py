@@ -119,25 +119,29 @@ ORG3_Details = """About Fraud Prevention Team – Fraud prevention for offline a
 ORG4_Details = """About TRMS – Screen customer orders for fraud to prevent chargebacks and protect customers"""
 
 Professional_Experience = {
-    "ORG0" : {
-        "Company Name" : "Stock Vertex Ventures",
-        "URL" : "",
-        "Role Name" : "Team Lead, Algotrading Analytics",
-        "From" : "02/2024",
-        "To" : "Present",
-        "Job Location" : "Bangalore, India",
-        "Role Details" : ORG0_Details,
-        "Key Projects" : {"Project_1" : {
-            "Project Name" : "Alpha Derivatives Trading Strategy",
-            "Details" : """The strategy focused on developing an algorithm to automate buying and exiting derivative trades, leveraging advanced indicators. Additionally, it involved building comprehensive reporting tools using Streamlit for real-time analysis and insights""",
-            "Savings" : "ROI of 130%",
-            "Tools" : "Python | SQL | Streamlit"},
-                        {"Project_2" : {
-            "Project Name" : "Built entire SQL Database with Indices OHLC Data",
-            "Details" : """By building a custom SQL database for indices data, we significantly improved the reliability and efficiency of our backtesting process, reduced reliance on AWS servers, and gained greater control over data quality checks.""",
-            "Savings" : "approx 40hrs per Week",
-            "Tools" : "Python | SQLite"}
-                         }}},
+"ORG0": {
+    "Company Name": "Stock Vertex Ventures",
+    "URL": "",
+    "Role Name": "Team Lead, Algotrading Analytics",
+    "From": "02/2024",
+    "To": "Present",
+    "Job Location": "Bangalore, India",
+    "Role Details": "ORG0_Details",
+    "Key Projects": {
+        "Project_1": {
+            "Project Name": "Alpha Derivatives Trading Strategy",
+            "Details": """The strategy focused on developing an algorithm to automate buying and exiting derivative trades, leveraging advanced indicators. Additionally, it involved building comprehensive reporting tools using Streamlit for real-time analysis and insights""",
+            "Savings": "ROI of 130%",
+            "Tools": "Python | SQL | Streamlit"
+        },
+        "Project_2": {
+            "Project Name": "Built entire SQL Database with Indices OHLC Data",
+            "Details": """By building a custom SQL database for indices data, we significantly improved the reliability and efficiency of our backtesting process, reduced reliance on AWS servers, and gained greater control over data quality checks.""",
+            "Savings": "approx 40hrs per Week",
+            "Tools": "Python | SQLite"
+        }
+    }
+},
     "ORG1" : {
         "Company Name" : "Hudson's Bay Company",
         "URL" : "",
