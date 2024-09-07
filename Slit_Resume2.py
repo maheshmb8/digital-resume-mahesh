@@ -137,7 +137,7 @@ Professional_Experience = {
             "Details" : """By building a custom SQL database for indices data, we significantly improved the reliability and efficiency of our backtesting process, reduced reliance on AWS servers, and gained greater control over data quality checks.""",
             "Savings" : "approx 40hrs per Week",
             "Tools" : "Python | SQLite"}
-                         }},
+                         }}},
     "ORG1" : {
         "Company Name" : "Hudson's Bay Company",
         "URL" : "",
