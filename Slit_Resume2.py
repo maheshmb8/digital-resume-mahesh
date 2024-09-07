@@ -128,10 +128,16 @@ Professional_Experience = {
         "Job Location" : "Bangalore, India",
         "Role Details" : ORG0_Details,
         "Key Projects" : {"Project_1" : {
-            "Project Name" : "Alpha Derivates Trading Strategy",
+            "Project Name" : "Alpha Derivatives Trading Strategy",
             "Details" : """The strategy focused on developing an algorithm to automate buying and exiting derivative trades, leveraging advanced indicators. Additionally, it involved building comprehensive reporting tools using Streamlit for real-time analysis and insights""",
             "Savings" : "ROI of 130%",
-            "Tools" : "Python | SQL | Streamlit"}}},
+            "Tools" : "Python | SQL | Streamlit"},
+                        {"Project_2" : {
+            "Project Name" : "Built entire SQL Database with Indices OHLC Data",
+            "Details" : """By building a custom SQL database for indices data, we significantly improved the reliability and efficiency of our backtesting process, reduced reliance on AWS servers, and gained greater control over data quality checks.""",
+            "Savings" : "approx 40hrs per Week",
+            "Tools" : "Python | SQLite"}
+                         }},
     "ORG1" : {
         "Company Name" : "Hudson's Bay Company",
         "URL" : "",
