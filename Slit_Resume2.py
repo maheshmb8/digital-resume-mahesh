@@ -472,8 +472,7 @@ with tab2:
                     l6 = Professional_Experience[i]['Key Projects'][j]['Savings']
                     l7 = Professional_Experience[i]['Key Projects'][j]['Tools']
                     col3,col4 = st.columns([1,90])
-                    col4.write('- '+l4)
-                    st.markdown(f'<p style="color:#ffffff;font-size:22px;margin-bottom:0;text-align:left;"><b> '+'- '+l4+' </b></p>',unsafe_allow_html=True)    
+                    st.markdown(f'<p style="color:#ffffff;font-size:12px;margin-bottom:0;text-align:left;"><b> '+'- '+l4+' </b></p>',unsafe_allow_html=True)    
                     with st.expander("See explanation"):
                         st.caption(details_emoji+' : '+l5)
                         st.caption(savings_emoji+' : '+l6)
