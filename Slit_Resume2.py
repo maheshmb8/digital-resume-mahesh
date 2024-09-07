@@ -72,6 +72,7 @@ organization = data.get('org', 'Unknown')
 visit_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 txt_file_path = 'visitor_data.txt'
 line = f"DR,{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
+st.write(line)
 telegram_send_message(message=line)
 
 so5_logo = Image.open(f"Resume_IC.png")
