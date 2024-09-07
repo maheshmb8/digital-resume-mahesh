@@ -250,6 +250,7 @@ Linkedin_URL_emoji = emoji.emojize(':link:')
 # \U000FE0F
 Location_emoji = emoji.emojize(':house:')
 birthday_emoji = emoji.emojize(':birthday_cake:')
+office_emoji = emoji.emojize(':office_building:')
 
 Coding_emoji = emoji.emojize(':man_technologist:')
 sheet_emoji = emoji.emojize(':page_facing_up:')
@@ -432,7 +433,7 @@ with tab1:
         l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))
         l2=(Professional_Experience[i]['From'],'-',Professional_Experience[i]['To'],'|',Professional_Experience[i]['Job Location'])
         l3=(Professional_Experience[i]['Role Details'])
-        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+' :office: '+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+office_emoji+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:13px;margin-bottom:0;text-align:left;"><b> '+Professional_Experience[i]['From']+'-'+Professional_Experience[i]['To']+' | '+Professional_Experience[i]['Job Location']+' </b></p>',unsafe_allow_html=True)
         st.caption(Professional_Experience[i]['Role Details'])
         for j in Professional_Experience[i]['Key Projects']:
