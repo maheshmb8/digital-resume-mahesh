@@ -427,7 +427,6 @@ with tab1:
     - """+books_emoji+""" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬
     - """+chart_inc+""" Data Analytics | ★★★★
     - """+chart_inc+""" Quant Analytics | ★★★✬
-    - """+chart_inc+""" Quant Analytics | ★★★✬
     - """+necktie+""" Team Management | ★★★★
     """)
 
