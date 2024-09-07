@@ -120,7 +120,7 @@ ORG4_Details = """About TRMS – Screen customer orders for fraud to prevent cha
 
 Professional_Experience = {
 "ORG0": {
-    "Company Name": ":office: Stock Vertex Ventures",
+    "Company Name": "Stock Vertex Ventures",
     "URL": "",
     "Role Name": "Team Lead, Algotrading Analytics",
     "From": "02/2024",
@@ -143,7 +143,7 @@ Professional_Experience = {
     }
 },
     "ORG1" : {
-        "Company Name" : ":office: Hudson's Bay Company",
+        "Company Name" : "Hudson's Bay Company",
         "URL" : "",
         "Role Name" : "Team Lead, Fraud Analytics",
         "From" : "09/2020",
@@ -177,7 +177,7 @@ Professional_Experience = {
                          }
     },
     "ORG2" : {
-        "Company Name" : ":office: Myntra",
+        "Company Name" : "Myntra",
         "URL" : "",
         "Role Name" : "Associate, Trust & Safety",
         "From" : "10/2019",
@@ -199,7 +199,7 @@ Professional_Experience = {
                          }
     },
     "ORG3" : {
-        "Company Name" : ":office: Tesco",
+        "Company Name" : "Tesco",
         "URL" : "",
         "Role Name" : "Senior Analyst, Fraud Prevention",
         "From" : "08/2016",
@@ -221,7 +221,7 @@ Professional_Experience = {
                          }
     },
     "ORG4" : {
-        "Company Name" : ":office: Amazon",
+        "Company Name" : "Amazon",
         "URL" : "",
         "Role Name" : "Risk Investigator, TRMS",
         "From" : "07/2014",
