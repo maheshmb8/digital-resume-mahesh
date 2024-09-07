@@ -76,7 +76,7 @@ birthdate = "November 1993"
 Experience_yrs = 9
 
 
-Skills = ['Python','SQL','Tableau','Excel','Streamlit','Statistics','Selenium']
+Skills = ['Python','SQL','Tableau','Excel','Streamlit','Statistics','Selenium','Team Management','Leadership','Data Analytics','Quant Analytics']
 
 Higest_Education = "MBA"
 HE_University = "Jain University"
@@ -266,6 +266,8 @@ skills_emoji = emoji.emojize(':toolbox:')
 workexp_emoji = emoji.emojize(':briefcase:')
 education_emoji = emoji.emojize(':mortar_board:')
 projects_emoji = emoji.emojize(':rocket:')
+chart_inc = emoji.emojize(':chart_increasing:')
+necktie = emoji.emojize(':necktie:')
 
 project_emoji = "\U0001F3AF"
 resume_tab_emoji = "\U0001F5BA"
@@ -423,6 +425,10 @@ with tab1:
     - """+chart_emoji+""" Tableau | ★★★★
     - """+chart_emoji+""" MicroStrategy | ★★★
     - """+books_emoji+""" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬
+    - """+chart_inc+""" Data Analytics | ★★★★
+    - """+chart_inc+""" Quant Analytics | ★★★✬
+    - """+chart_inc+""" Quant Analytics | ★★★✬
+    - """+necktie+""" Team Management | ★★★★
     """)
 
     # Work Experience
