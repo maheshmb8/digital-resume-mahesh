@@ -464,7 +464,7 @@ with tab2:
     for i in Professional_Experience.keys():
         if Professional_Experience[i]['Key Projects']['Project_1']['Project Name']!='':            
             l2_1=str(Professional_Experience[i]['Company Name'])
-            st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
+            st.markdown(f'<p style="color:#ffffff;font-size:22px;margin-bottom:0;text-align:left;"><b> '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
             for j in Professional_Experience[i]['Key Projects']:
                 if Professional_Experience[i]['Key Projects'][j]['Project Name'] != '':
                     l4 = Professional_Experience[i]['Key Projects'][j]['Project Name']
