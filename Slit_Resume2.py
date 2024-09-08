@@ -478,7 +478,7 @@ with tab1:
 
     # Skills
     st.subheader(skills_emoji+" Skills")
-    colsk1,colsk2 = st.columns([2,3])
+    colsk1,colsk2 = st.columns([2.5,3])
     colsk1.write("""
     - """+Coding_emoji+""" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬
     - """+Coding_emoji+""" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★
