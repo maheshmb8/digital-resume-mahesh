@@ -515,6 +515,7 @@ with tab1:
 #                     st.caption(details_emoji+' : '+l5)
 #                     st.caption(savings_emoji+' : '+l6)
 #                     st.caption(tools_emoji+' : '+l7)
+     st.write(right_point_emoji+right_point_emoji+" for Project details, visit next tab"+left_point_emoji+left_point_emoji)
         st.caption('')
 
     # Education 
