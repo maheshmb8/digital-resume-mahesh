@@ -32,6 +32,8 @@ import os
 import glob
 import datetime
 import requests
+import pandas as pd
+import plotly.express as px
 
 
 # # In[23]:
@@ -386,7 +388,45 @@ Profile_pic_i = Image.open(Profile_pic)
 
 
 # In[11]:
+r = [9, 8, 8, 8, 8, 7, 7, 7, 7, 6, 6,7.5]
+theta = ['Data Analytics',
+ 'SQL',
+ 'Excel',
+ 'Streamlit',
+ 'Python',
+ 'Tableau',
+ 'Statistics',
+ 'Team Management',
+ 'Selenium',
+ 'MicroStrategy',
+ 'Quant Analytics',
+'Leadership']
 
+# Create a DataFrame and sort by Proficiency descending
+data = {'Skills': theta, 'Proficiency': r}
+df = pd.DataFrame(data).sort_values(by='Proficiency', ascending=False)
+
+# Create the bar chart with a custom color scale
+fig = px.bar(df, x="Skills", y="Proficiency", color="Proficiency",
+            color_continuous_scale=[
+                "rgb(153, 204, 255)",
+                "rgb(0, 0, 255)"
+            ],
+            title="Skill Proficiency")
+
+# Add black borders to bars and bold labels on x-axis
+fig.update_traces(marker=dict(line=dict(color='black', width=1)))
+fig.update_xaxes(tickfont=dict(size=10, family='Arial Black'))
+fig.update_layout(showlegend=False, coloraxis_showscale=False,
+                 title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
+fig.update_layout(title_x=0.5,showlegend=False)
+fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
+fig.update_layout(height=400, width=600,showlegend=False,margin=dict(l=0, r=0, t=100, b=0))
+fig.update_layout(
+                  xaxis_title="<b>Skills</b>",  # Set x-axis title
+                  yaxis_title="<b>Proficiency</b>",
+                  xaxis_title_standoff=10,  # Adjust standoff for better spacing
+                  xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
 
 tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", project_emoji+" Projects"])
 
@@ -434,6 +474,8 @@ with tab1:
     st.subheader(profile_emoji+" Profile")
     st.write(Profile)
 
+        
+
     # Skills
     st.subheader(skills_emoji+" Skills")
     st.write("""
@@ -447,6 +489,7 @@ with tab1:
     - """+chart_inc+""" Quant Analytics | ★★★✬
     - """+necktie+""" Team Management | ★★★★
     """)
+    st.plotly_chart(fig)    
 
     # Work Experience
 
