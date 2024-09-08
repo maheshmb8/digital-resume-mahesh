@@ -520,7 +520,7 @@ with tab1:
     st.write(right_point_emoji+right_point_emoji+" for Project details, visit next tab"+left_point_emoji+left_point_emoji)
     # Education 
     st.subheader(education_emoji+" Education")
-    st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Higest_Education+' ,'+HE_University+' </b></p>',unsafe_allow_html=True)
+    st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Higest_Education+', '+HE_University+' </b></p>',unsafe_allow_html=True)
     st.markdown(f'<p style="color:#ffffff;font-size:13px;margin-bottom:0;text-align:left;"><b> '+HE_From+'-'+HE_To+' | '+HE_Location+' </b></p>',unsafe_allow_html=True)
     st.caption('Specialization : '+Edu_Specialization)
 
