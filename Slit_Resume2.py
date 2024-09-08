@@ -388,7 +388,7 @@ Profile_pic_i = Image.open(Profile_pic)
 
 
 # In[11]:
-r = [9, 8, 8, 8, 8, 7, 7, 7, 7, 6, 6,7.5]
+r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5]
 theta = ['Data Analytics',
  'SQL',
  'Excel',
@@ -396,7 +396,6 @@ theta = ['Data Analytics',
  'Python',
  'Tableau',
  'Statistics',
- 'Team Management',
  'Selenium',
  'MicroStrategy',
  'Quant Analytics',
@@ -476,7 +475,7 @@ with tab1:
 
         
 
-    # Skills
+    # Skills✬
     st.subheader(skills_emoji+" Skills")
     colsk1,colsk2 = st.columns([2.5,3])
     colsk1.write("""
@@ -487,8 +486,8 @@ with tab1:
     - """+chart_emoji+""" MicroStrategy | ★★★
     - """+books_emoji+""" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬
     - """+chart_inc+""" Data Analytics | ★★★★
-    - """+chart_inc+""" Quant Analytics | ★★★✬
-    - """+necktie+""" Team Management | ★★★★
+    - """+chart_inc+""" Quant Analytics | ★★★
+    - """+necktie+""" Leadership | ★★★★
     """)
     colsk2.plotly_chart(fig)    
 
