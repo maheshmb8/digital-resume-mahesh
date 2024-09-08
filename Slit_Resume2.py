@@ -408,8 +408,8 @@ df = pd.DataFrame(data).sort_values(by='Proficiency', ascending=False)
 # Create the bar chart with a custom color scale
 fig = px.bar(df, x="Skills", y="Proficiency", color="Proficiency",
             color_continuous_scale=[
-                "rgb(173, 255, 47)",
-                "rgb(0, 100, 0)"
+                "rgb(255, 228, 181)",
+                "rgb(255, 140, 0)"
             ],
             title="Skills Matrix")
 
