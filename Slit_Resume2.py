@@ -103,7 +103,7 @@ HE_University = "Jain University"
 HE_Location = "Bangalore, India"
 HE_From = "2016"
 HE_To = "2019"
-Edu_Specialization = "Supply Chain and Logistics"
+Edu_Specialization = "Supply Chain & Logistics"
 
 Profile = f"""With over {str(Experience_yrs)} + years of expertise in Fraud Analytics, Abuse Prevention & Quant Analytics, I possess a strong 
 command of analytical tools like SQL and Python. I adeptly utilize advanced analytical 
@@ -522,7 +522,7 @@ with tab1:
     st.subheader(education_emoji+" Education")
     st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Higest_Education+' ,'+HE_University+' </b></p>',unsafe_allow_html=True)
     st.markdown(f'<p style="color:#ffffff;font-size:13px;margin-bottom:0;text-align:left;"><b> '+HE_From+'-'+HE_To+' | '+HE_Location+' </b></p>',unsafe_allow_html=True)
-    st.caption('specialization : '+Edu_Specialization)
+    st.caption('Specialization : '+Edu_Specialization)
 
 
 # In[13]:
