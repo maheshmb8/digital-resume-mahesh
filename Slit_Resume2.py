@@ -411,7 +411,7 @@ fig = px.bar(df, x="Skills", y="Proficiency", color="Proficiency",
                 "rgb(153, 204, 255)",
                 "rgb(0, 0, 255)"
             ],
-            title="Skill Proficiency")
+            title="Skills Matrix")
 
 # Add black borders to bars and bold labels on x-axis
 fig.update_traces(marker=dict(line=dict(color='black', width=1)))
@@ -420,7 +420,7 @@ fig.update_layout(showlegend=False, coloraxis_showscale=False,
                  title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
 fig.update_layout(title_x=0.5,showlegend=False)
 fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
-fig.update_layout(height=300, width=700,showlegend=False,margin=dict(l=0, r=0, t=30, b=0))
+fig.update_layout(height=300, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
 fig.update_layout(
                   xaxis_title="<b>Skills</b>",  # Set x-axis title
                   yaxis_title="<b>Proficiency</b>",
