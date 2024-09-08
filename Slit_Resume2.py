@@ -421,7 +421,7 @@ fig.update_layout(showlegend=False, coloraxis_showscale=False,
                  title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
 fig.update_layout(title_x=0.5,showlegend=False)
 fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
-fig.update_layout(height=400, width=600,showlegend=False,margin=dict(l=0, r=0, t=0, b=0))
+fig.update_layout(height=400, width=600,showlegend=False,margin=dict(l=0, r=0, t=5, b=0))
 fig.update_layout(
                   xaxis_title="<b>Skills</b>",  # Set x-axis title
                   yaxis_title="<b>Proficiency</b>",
