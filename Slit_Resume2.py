@@ -478,7 +478,8 @@ with tab1:
 
     # Skills
     st.subheader(skills_emoji+" Skills")
-    st.write("""
+    colsk1,colsk2 = st.columns([2,3])
+    colsk1.write("""
     - """+Coding_emoji+""" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬
     - """+Coding_emoji+""" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★
     - """+chart_emoji+""" Excel | ★★★★✬
@@ -489,7 +490,7 @@ with tab1:
     - """+chart_inc+""" Quant Analytics | ★★★✬
     - """+necktie+""" Team Management | ★★★★
     """)
-    st.plotly_chart(fig)    
+    colsk2.plotly_chart(fig)    
 
     # Work Experience
 
