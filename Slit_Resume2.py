@@ -462,6 +462,7 @@ with tab1:
         )
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+email_emoji+' '+Email+' | '+phone_emoji+' '+Phone+'</p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">{Linkedin_URL}</a> | {Location_emoji} {Location}</p>', unsafe_allow_html=True)
+        st.markdown(f'<style>a:hover {{color: orange;}}</style><p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">{Linkedin_URL}</a> | {Location_emoji} {Location}</p>', unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+birthday_emoji+' '+birthdate+'</p>',unsafe_allow_html=True)
 #         st.write(email_emoji, Email,'|',phone_emoji,Phone)
 #         st.write(Linkedin_URL_emoji, Linkedin_URL,'|',Location_emoji,Location)
