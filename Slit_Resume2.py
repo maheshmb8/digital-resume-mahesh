@@ -152,7 +152,7 @@ Professional_Experience = {
         "Project_1": {
             "Project Name": "Alpha Derivatives Trading Strategy",
             "Details": """The strategy focused on developing an algorithm to automate buying and exiting derivative trades, leveraging advanced indicators. Additionally, it involved building comprehensive reporting tools using Streamlit for real-time analysis and insights""",
-            "Savings": "ROI of 130%",
+            "Savings": "ROI of 120%",
             "Tools": "Python | SQL | Streamlit"
         },
         "Project_2": {
