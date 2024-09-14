@@ -116,7 +116,7 @@ trustworthy environment for all."""
 
 E_resume = """I have created this impressive "E-Resume" using Python and the Streamlit Framework. It serves as a platform to showcase my exceptional Python and Streamlit skillsets. The first tab elegantly presents my detailed resume, while the second tab showcases a collection of my accomplished projects, reflecting my proficiency and experience."""
 
-Short_Headline = f"""Fraud Analytics Expert | Leveraging {str(Experience_yrs)}+ Years of Experience in Detecting Fraud and Non Fraud Risk | ex-Amazon | ex-Tesco"""
+Short_Headline = f"""Seasoned Team Lead with {Experience_yrs}+ years in retail analytics, supply chain optimization, and algorithmic trading. Proven expertise in risk management, fraud detection, & implementing data-driven strategies to enhance operational efficiency & decision-making. | ex-Amazon | ex-Tesco"""
 
 Awards = {
     "Prime Player Award" : {
