@@ -300,6 +300,15 @@ pen_emoji = emoji.emojize(':pen:')
 right_point_emoji = emoji.emojize(':backhand_index_pointing_right:')
 left_point_emoji = emoji.emojize(':backhand_index_pointing_left:')
 
+# 🤖 ⓘ📝 💡
+# U+1F916
+# U+24D8
+# U+1F4DD
+# https://emojidb.org/email-emojis?utm_source=user_search
+
+# emoji.demojize('\U0001F916')
+# emoji.demojize('\U0001F4A1')
+
 
 # In[30]:
 
