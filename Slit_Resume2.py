@@ -289,6 +289,7 @@ education_emoji = emoji.emojize(':mortar_board:')
 projects_emoji = emoji.emojize(':rocket:')
 chart_inc = emoji.emojize(':chart_increasing:')
 necktie = emoji.emojize(':necktie:')
+robot = emoji.emojize(':robot:')
 
 project_emoji = "\U0001F3AF"
 resume_tab_emoji = "\U0001F5BA"
@@ -490,6 +491,7 @@ with tab1:
     - """+chart_inc+""" Data Analytics | ★★★★
     - """+chart_inc+""" Quant Analytics | ★★★
     - """+necktie+""" Leadership | ★★★★
+    - """+robot+""" REST API | ★★★★
     """)
     colsk2.plotly_chart(fig)    
 
