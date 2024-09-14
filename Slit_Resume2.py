@@ -454,7 +454,7 @@ with tab1:
 
     with col2:
         st.title(Full_Name)
-        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Current_Designation+' ,'+Current_Team+' </b></p>',unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+Current_Designation+', '+Current_Team+' </b></p>',unsafe_allow_html=True)
         st.write(Short_Headline)
         st.download_button(
             label=download_resume_emoji+" Download Resume",
