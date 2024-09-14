@@ -290,6 +290,7 @@ projects_emoji = emoji.emojize(':rocket:')
 chart_inc = emoji.emojize(':chart_increasing:')
 necktie = emoji.emojize(':necktie:')
 robot = emoji.emojize(':robot:')
+bulb = emoji.emojize(':light_bulb:')
 
 project_emoji = "\U0001F3AF"
 resume_tab_emoji = "\U0001F5BA"
@@ -469,7 +470,7 @@ with tab1:
     st.write("#")    
     st.divider()
     # About Streamlit Resume
-    st.subheader(details_emoji_2+"  E-Resume Information")
+    st.subheader(bulb+"  E-Resume Information")
     st.write(E_resume)
     
     # Profile
