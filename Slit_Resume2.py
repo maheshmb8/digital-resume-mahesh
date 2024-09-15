@@ -200,7 +200,7 @@ Professional_Experience = {
             "Details" : """I led a project to enhance sizing charts on our website, focusing on key catalogue categories with high return rates due to sizing issues. Using SQL and Python for data extraction and analysis, I identified SKUs with the most returns where products were often reported as too large or too small. I refined the sizing charts for these specific categories, leveraging Tableau for data visualization to present insights and track improvements. This resulted in more accurate sizing guides, reduced returns, and improved customer satisfaction.""",
             "Savings" : "$2M",
             "Tools" : "SQL | Python"
-        }
+        },
                          "Project_6" : {
             "Project Name" : "Daily/Weekly Report automation",
             "Details" : """automated daily fraud report generation using Selenium in Python, including sign-in, browsing, exporting, graph building, and emailing""",
