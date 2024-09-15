@@ -147,7 +147,7 @@ Professional_Experience = {
     "From": "02/2024",
     "To": "Present",
     "Job Location": "Bangalore, India",
-    "Role Details": "ORG0_Details",
+    "Role Details": ORG0_Details,
     "Key Projects": {
         "Project_1": {
             "Project Name": "Alpha Derivatives Trading Strategy",
