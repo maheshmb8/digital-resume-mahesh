@@ -303,6 +303,7 @@ chart_inc = emoji.emojize(':chart_increasing:')
 necktie = emoji.emojize(':necktie:')
 robot = emoji.emojize(':robot:')
 bulb = emoji.emojize(':light_bulb:')
+building_construction = emoji.emojize(':building_construction:')
 
 project_emoji = "\U0001F3AF"
 resume_tab_emoji = "\U0001F5BA"
@@ -453,7 +454,7 @@ fig.update_layout(
                   xaxis_title_standoff=10,  # Adjust standoff for better spacing
                   xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
 
-tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", project_emoji+" Projects"])
+tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
 
 
 # In[17]:
@@ -554,7 +555,7 @@ with tab1:
 
 
 with tab2:
-    st.subheader(projects_emoji+" Projects")
+    st.subheader(building_construction+" Projects")
     for i in Professional_Experience.keys():
         if Professional_Experience[i]['Key Projects']['Project_1']['Project Name']!='':            
             l2_1=str(Professional_Experience[i]['Company Name'])
