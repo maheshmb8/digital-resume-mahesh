@@ -412,7 +412,7 @@ Profile_pic_i = Image.open(Profile_pic)
 
 
 # In[11]:
-r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5]
+r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5,7.5]
 theta = ['Data Analytics',
  'SQL',
  'Excel',
@@ -423,7 +423,8 @@ theta = ['Data Analytics',
  'Selenium',
  'MicroStrategy',
  'Quant Analytics',
-'Leadership']
+'Leadership',
+'REST API']
 
 # Create a DataFrame and sort by Proficiency descending
 data = {'Skills': theta, 'Proficiency': r}
