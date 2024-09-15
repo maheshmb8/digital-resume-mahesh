@@ -296,6 +296,7 @@ download_resume_emoji = emoji.emojize(':memo:')
 
 profile_emoji = emoji.emojize(':male-detective:')
 skills_emoji = emoji.emojize(':toolbox:')
+skills_emoji = emoji.emojize(':puzzle_piece:')
 workexp_emoji = emoji.emojize(':briefcase:')
 education_emoji = emoji.emojize(':mortar_board:')
 projects_emoji = emoji.emojize(':rocket:')
