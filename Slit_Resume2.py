@@ -34,6 +34,7 @@ import datetime
 import requests
 import pandas as pd
 import plotly.express as px
+import base64
 
 
 # # In[23]:
