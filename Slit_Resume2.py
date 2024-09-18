@@ -142,7 +142,8 @@ ORG4_Details = """About TRMS – Screen customer orders for fraud to prevent cha
 Professional_Experience = {
 "ORG0": {
     "Company Name": "Stock Vertex Ventures",
-    "URL": "",
+    "URL": "https://www.indiratrade.com/",
+    "URL_Logo":"indira.jpg",
     "Role Name": "Team Lead, Quant Analytics",
     "From": "02/2024",
     "To": "Present",
@@ -165,7 +166,8 @@ Professional_Experience = {
 },
     "ORG1" : {
         "Company Name" : "Hudson's Bay Company",
-        "URL" : "",
+        "URL" : "https://www.hbc.com/",
+        "URL_Logo":"HBC.png",
         "Role Name" : "Team Lead, Fraud Analytics",
         "From" : "09/2020",
         "To" : "12/2023",
@@ -211,7 +213,8 @@ Professional_Experience = {
     },
     "ORG2" : {
         "Company Name" : "Myntra",
-        "URL" : "",
+        "URL" : "https://www.myntra.com/",
+        "URL_Logo":"myntra.png",
         "Role Name" : "Associate, Trust & Safety",
         "From" : "10/2019",
         "To" : "09/2020",
@@ -233,7 +236,8 @@ Professional_Experience = {
     },
     "ORG3" : {
         "Company Name" : "Tesco",
-        "URL" : "",
+        "URL" : "https://www.tesco.com/",
+        "URL_Logo":"tesco.png",
         "Role Name" : "Senior Analyst, Fraud Prevention",
         "From" : "08/2016",
         "To" : "10/2019",
@@ -255,7 +259,8 @@ Professional_Experience = {
     },
     "ORG4" : {
         "Company Name" : "Amazon",
-        "URL" : "",
+        "URL" : "https://www.amazon.com/",
+        "URL_Logo":"amazon.png",
         "Role Name" : "Risk Investigator, TRMS",
         "From" : "07/2014",
         "To" : "01/2014",
@@ -528,7 +533,8 @@ with tab1:
         l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))
         l2=(Professional_Experience[i]['From'],'-',Professional_Experience[i]['To'],'|',Professional_Experience[i]['Job Location'])
         l3=(Professional_Experience[i]['Role Details'])
-        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+office_emoji+' '+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+office_emoji+' '+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+'    </b>'+'<a href='+'"'+ Professional_Experience[i]['URL']+'"'+'><img src="data:image/png;base64,{}" style="margin-left:20px;" width="50" height="40"></a></p>'.format(base64.b64encode(open(Professional_Experience[i]['URL_Logo'], "rb").read()).decode()),unsafe_allow_html=True)
+        # st.markdown(f'<p style="color:#ffffff;font-size:18px;margin-bottom:0;text-align:left;"><b> '+office_emoji+' '+Professional_Experience[i]['Role Name']+' | '+Professional_Experience[i]['Company Name']+' </b></p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:13px;margin-bottom:0;text-align:left;"><b> '+Professional_Experience[i]['From']+'-'+Professional_Experience[i]['To']+' | '+Professional_Experience[i]['Job Location']+' </b></p>',unsafe_allow_html=True)
         st.caption(Professional_Experience[i]['Role Details'])
         for j in Professional_Experience[i]['Key Projects']:
