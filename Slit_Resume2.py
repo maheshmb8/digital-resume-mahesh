@@ -114,7 +114,7 @@ future occurrences. By leveraging my extensive experience and skill set, I conti
 to enhance the detection and prevention of Fraud and Abuse, ensuring a secure and 
 trustworthy environment for all."""
 
-E_resume = """I have created this impressive "E-Resume" using Python and the Streamlit Framework. It serves as a platform to showcase my exceptional Python and Streamlit skillsets. The first tab elegantly presents my detailed resume, while the second tab showcases a collection of my accomplished projects, reflecting my proficiency and experience."""
+E_resume = """I have created this impressive "E-Resume" using Python and the Streamlit Framework. It serves as a platform to showcase my exceptional Python and Streamlit skillsets. The first tab elegantly presents my detailed resume, while the second tab showcases a collection of my accomplished projects, reflecting my proficiency and experience.I recommend viewing this E-Resume on a desktop for the best experience, as the interactive features and visualizations are optimized for larger screens, ensuring a smoother and more detailed presentation of my skills and projects."""
 
 Short_Headline = f"""Seasoned Team Lead with {Experience_yrs}+ years in retail analytics, supply chain optimization, and algorithmic trading. Proven expertise in risk management, fraud detection, & implementing data-driven strategies to enhance operational efficiency & decision-making. | ex-Amazon | ex-Tesco"""
 
