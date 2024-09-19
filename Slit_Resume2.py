@@ -500,6 +500,7 @@ fig2.update_layout(title_x=0.3,showlegend=False)
 fig2.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
 fig2.update_layout(height=270, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
 fig2.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
+fig2.update_layout(xaxis={'rangeselector':{'visible':False}})
 fig2.update_layout(
                   xaxis_title="<b>Year Month</b>",  # Set x-axis title
                   yaxis_title="<b>Role, Company</b>",
