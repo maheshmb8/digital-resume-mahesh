@@ -35,6 +35,8 @@ import requests
 import pandas as pd
 import plotly.express as px
 import base64
+from datetime import timedelta
+import plotly.figure_factory as ff
 
 
 # # In[23]:
@@ -461,6 +463,52 @@ fig.update_layout(
                   xaxis_title_standoff=10,  # Adjust standoff for better spacing
                   xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
 
+data = []
+for i in Professional_Experience.keys():
+    l1 = ' '.join([Professional_Experience[i]['Role Name'], '|', Professional_Experience[i]['Company Name']])
+    l2s = ' '.join([Professional_Experience[i]['From']])
+    l2c = ' '.join([Professional_Experience[i]['To']])
+    l3 = Professional_Experience[i]['Role Details']
+    data.append([l1, l2s,l2c, l3])
+df = pd.DataFrame(data, columns=['Task', 'Start','Finish', 'Role Details'])
+df['Start'] = pd.to_datetime('01/' + df['Start'], format='%d/%m/%Y')
+df['Finish'] = df['Finish'].apply(lambda x: (datetime.datetime.today() + timedelta(days=60)) if x == 'Present' else pd.to_datetime('01/' + x, format='%d/%m/%Y'))
+df['Finish'] = pd.to_datetime(df['Finish'].astype(str).str[:10],format='%Y-%m-%d')
+df['Start'] = df['Start'].astype('str')
+df['Finish'] = df['Finish'].astype('str')
+df_dict_list = df.to_dict(orient='records')
+# edu_rec = {"Task":Higest_Education+' | '+HE_University,
+#           "Start":HE_From+"-01-01",
+#           "Finish":HE_To+"-01-01",
+#           "Role Details":Edu_Specialization}
+# df_dict_list.append(edu_rec)
+for record in df_dict_list:
+    record['Start'] = pd.to_datetime(record['Start'])
+df_dict_list_sorted = sorted(df_dict_list, key=lambda x: x['Start'])
+for record in df_dict_list_sorted:
+    record['Start'] = record['Start'].strftime('%Y-%m-%d')
+fig2 = ff.create_gantt(df_dict_list_sorted) 
+fig2.update_layout(
+    title="Professional Experience Timeline",
+    showlegend=False,
+    xaxis_tickformat="%Y %b")
+fig2.update_traces(marker=dict(line=dict(color='black', width=1)))
+fig2.update_xaxes(tickfont=dict(size=10, family='Arial Black'))
+fig2.update_layout(showlegend=False, coloraxis_showscale=False,
+                 title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
+fig2.update_layout(title_x=0.3,showlegend=False)
+fig2.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
+fig2.update_layout(height=270, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
+fig2.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
+fig2.update_layout(
+                  xaxis_title="<b>Year Month</b>",  # Set x-axis title
+                  yaxis_title="<b>Role, Company</b>",
+                  xaxis_title_standoff=10,  # Adjust standoff for better spacing
+                  xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
+fig2.update_traces(
+    hovertemplate="<b>%{y}</b><br>" +  # Display Role Name | Company Name
+                  "Year Month: %{x:%Y %b}<br>")
+
 tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
 
 
@@ -524,7 +572,8 @@ with tab1:
     - """+necktie+""" Leadership | ★★★★
     - """+robot+""" REST API | ★★★★
     """)
-    colsk2.plotly_chart(fig)    
+    colsk2.plotly_chart(fig)
+    colsk2.plotly_chart(fig2) 
 
     # Work Experience
 
