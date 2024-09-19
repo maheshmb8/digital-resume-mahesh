@@ -266,7 +266,7 @@ Professional_Experience = {
         "URL_Logo":"amazon.png",
         "Role Name" : "Risk Investigator, TRMS",
         "From" : "07/2014",
-        "To" : "01/2016",
+        "To" : "02/2016",
         "Job Location" : "Bangalore, India",
         "Role Details" : ORG4_Details,
         "Key Projects" : {"Project_1" : {
