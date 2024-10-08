@@ -79,7 +79,7 @@ bot_token = '7470750444:AAEVSp9woUIREXs7RiBmgRgaQF9S4NGMNj4'
 # line = f"DR,{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
 # st.write(line)
 # telegram_send_message(message=line)
-telegram_send_message(message='url opened',chat_id=704541819)
+# telegram_send_message(message='url opened',chat_id=704541819)
 
 so5_logo = Image.open(f"Resume_IC.png")
 Profile_pic = (f"Profile_Pic.png")
