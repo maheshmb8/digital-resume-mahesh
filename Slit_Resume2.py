@@ -42,26 +42,26 @@ import plotly.figure_factory as ff
 # # In[23]:
 bot_token = '7470750444:AAEVSp9woUIREXs7RiBmgRgaQF9S4NGMNj4'
 # chat_id = 123
-def telegram_send_message(message,bot_token=bot_token,chat_id = group_chat_id):
-    """
-    Sends a message via Telegram bot API.
+# def telegram_send_message(message,bot_token=bot_token,chat_id = group_chat_id):
+#     """
+#     Sends a message via Telegram bot API.
 
-    Args:
-    - bot_token (str): The API token of your Telegram bot.
-    - chat_id (int or str): The chat ID where the message should be sent. 
-                            Use negative values for group chat IDs.
-    - message (str): The message to be sent.
+#     Args:
+#     - bot_token (str): The API token of your Telegram bot.
+#     - chat_id (int or str): The chat ID where the message should be sent. 
+#                             Use negative values for group chat IDs.
+#     - message (str): The message to be sent.
     
-    Returns:
-    - dict: JSON response from the Telegram API.
-    """
-    url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
-    params = {
-        'chat_id': chat_id,
-        'text': message
-    }
-    response = requests.get(url, params=params)
-    return response.json()
+#     Returns:
+#     - dict: JSON response from the Telegram API.
+#     """
+#     url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
+#     params = {
+#         'chat_id': chat_id,
+#         'text': message
+#     }
+#     response = requests.get(url, params=params)
+#     return response.json()
 
 # response = requests.get('https://ipinfo.io')
 # data = response.json()
