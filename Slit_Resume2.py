@@ -88,16 +88,16 @@ Pdf_Resume = (f"Mahesh Resume.pdf")
 First_Name = "Mahesh M"
 Last_Name = "Bathija"
 Full_Name = First_Name+' '+Last_Name
-Current_Designation = "Team Lead"
-Current_Team = "Quant Analytics"
-Current_Organization = "Stock Vertex Ventures"
-Current_Org_from = "02/2024"
+Current_Designation = "Manager"
+Current_Team = "Business Intelligence"
+Current_Organization = "Saks Global"
+Current_Org_from = "12/2024"
 Email = "maheshmbathija81193@gmail.com"
 Phone = "+91 8951861604"
 Linkedin_URL = "https://www.linkedin.com/in/maheshm8"
 Location = "Bangalore, India"
 birthdate = "November 1993"
-Experience_yrs = 9
+Experience_yrs = 10
 
 
 Skills = ['Python','SQL','Tableau','Excel','Streamlit','Statistics','Selenium','Team Management','Leadership','Data Analytics','Quant Analytics']
@@ -109,14 +109,10 @@ HE_From = "2016"
 HE_To = "2019"
 Edu_Specialization = "Supply Chain & Logistics"
 
-Profile = f"""With over {str(Experience_yrs)} + years of expertise in Fraud Analytics, Abuse Prevention & Quant Analytics, I possess a strong 
-command of analytical tools like SQL and Python. I adeptly utilize advanced analytical 
-techniques to actively and passively identify instances of Fraud and Abuse, while also 
-deriving valuable insights from the data. I maintain regular communication with 
-stakeholders to effectively mitigate these risks and implement proactive policies to prevent 
-future occurrences. By leveraging my extensive experience and skill set, I continuously strive 
-to enhance the detection and prevention of Fraud and Abuse, ensuring a secure and 
-trustworthy environment for all."""
+Profile = f"""BI Manager with {str(Experience_yrs)} +years of experience across global retail analytics, fraud & risk, and data-driven operations. 
+Currently leading a 9-member Business Intelligence team delivering standardized, scalable BI solutions across Planning, Supply Chain, Digital Operations, and 
+Finance. Strong in SQL, Python, and modern BI platforms, with a track record of driving reporting standardization, automation, and self-service analytics. 
+Known for building high-performing teams and leading changes that improve decision quality, efficiency, and business impact."""
 
 E_resume = """I have created this impressive "E-Resume" using Python and the Streamlit Framework. It serves as a platform to showcase my exceptional Python and Streamlit skillsets. The first tab elegantly presents my detailed resume, while the second tab showcases a collection of my accomplished projects, reflecting my proficiency and experience. I recommend viewing this E-Resume on a desktop for the best experience, as the interactive features and visualizations are optimized for larger screens, ensuring a smoother and more detailed presentation of my skills and projects."""
 
@@ -136,6 +132,7 @@ Awards = {
 }
 
 
+ORG5_Details = """BI Manager owning enterprise analytics and reporting strategy while leading a global team supporting core retail decision-making functions."""
 ORG0_Details = """My Role - Lead and collaborate with the team to build,backtest, and deploy live algorithmic trading strategies\nfor stocks."""
 ORG1_Details = """About Fraud Analytics Team – Detecting fraud, boosting revenue through trend identification and mitigation\n
 Led a successful team of 2 analysts, collaborating on multiple projects and cutting false referrals by 35%."""
@@ -144,6 +141,30 @@ ORG3_Details = """About Fraud Prevention Team – Fraud prevention for offline a
 ORG4_Details = """About TRMS – Screen customer orders for fraud to prevent chargebacks and protect customers"""
 
 Professional_Experience = {
+"ORG5": {
+    "Company Name": "Saks Global",
+    "URL": "https://www.saksglobal.com/",
+    "URL_Logo":"indira.jpg",
+    "Role Name": "Manager, BI Reporting",
+    "From": "12/2024",
+    "To": "Present",
+    "Job Location": "Bangalore, India",
+    "Role Details": ORG5_Details,
+    "Key Projects": {
+        "Project_1": {
+            "Project Name": "Enterprise BI Standardization & Self-Service Enablement",
+            "Details": """Led a multi-domain BI transformation to consolidate fragmented reporting into standardized, governed dashboards across Planning, Supply Chain, Digital Operations, and Finance. Defined common KPIs, redesigned semantic layers, and established self-service analytics, reducing dependency on BI for ad-hoc reporting and improving leadership trust in data.""",
+            "Savings": "Improved decision efficiency; reduced recurring reporting effort by hundreds of hours annually",
+            "Tools": "SQL | Python | Looker | Excel | DBT"
+        },
+        "Project_2": {
+            "Project Name": "AI-Driven Image & Pose Analytics Program",
+            "Details": """Led a cross-functional team to design and deliver an AI-based image and pose analytics solution to assess product imagery quality and alignment with catalog standards. Owned problem definition, delivery roadmap, stakeholder alignment, and integration into existing analytics workflows, enabling scalable adoption beyond traditional BI use cases.""",
+            "Savings": "Reduced manual image review effort and improved catalog quality consistency at scale, 91% Accuracy",
+            "Tools": "Python | Computer Vision | MediaPipe | SQL | BI Dashboards"
+        }
+    }
+},
 "ORG0": {
     "Company Name": "Stock Vertex Ventures",
     "URL": "https://www.indiratrade.com/",
@@ -423,7 +444,7 @@ Profile_pic_i = Image.open(Profile_pic)
 
 
 # In[11]:
-r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5,7.5]
+r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5,7.5,9]
 theta = ['Data Analytics',
  'SQL',
  'Excel',
@@ -435,7 +456,8 @@ theta = ['Data Analytics',
  'MicroStrategy',
  'Quant Analytics',
 'Leadership',
-'REST API']
+'REST API',
+'Automation']
 
 # Create a DataFrame and sort by Proficiency descending
 data = {'Skills': theta, 'Proficiency': r}
@@ -666,4 +688,5 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
