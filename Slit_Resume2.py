@@ -144,7 +144,7 @@ Professional_Experience = {
 "ORG5": {
     "Company Name": "Saks Global",
     "URL": "https://www.saksglobal.com/",
-    "URL_Logo":"indira.jpg",
+    "URL_Logo":"Saks_Global_logo.png",
     "Role Name": "Manager, BI Reporting",
     "From": "12/2024",
     "To": "Present",
@@ -688,5 +688,6 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
