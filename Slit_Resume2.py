@@ -596,8 +596,8 @@ with tab1:
     - """+necktie+""" Leadership | ★★★★
     - """+robot+""" REST API | ★★★★
     """)
-    colsk2.plotly_chart(fig)
-    colsk2.plotly_chart(fig2) 
+    # colsk2.plotly_chart(fig)
+    # colsk2.plotly_chart(fig2) 
 
     # Work Experience
 
@@ -688,6 +688,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
