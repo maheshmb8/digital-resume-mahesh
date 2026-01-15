@@ -509,6 +509,8 @@ fig = px.treemap(
     path=["Category", "Skill"],
     values="Value",
     title="Core Competencies"
+        color="Category",
+        color_discrete_sequence=px.colors.qualitative.Safe
 )
 
 # ---- Styling to match your resume theme ----
@@ -730,6 +732,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
