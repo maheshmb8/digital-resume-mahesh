@@ -490,14 +490,14 @@ skills_data = {
         "BI & Analytics Leadership","BI & Analytics Leadership","BI & Analytics Leadership",
         "Data & Analytics","Data & Analytics","Data & Analytics","Data & Analytics",
         "BI Platforms","BI Platforms","BI Platforms",
-        "Automation & Engineering","Automation & Engineering",
+        "Automation & Engineering","Automation & Engineering","Automation & Engineering",
         "Domain Expertise","Domain Expertise","Domain Expertise","Domain Expertise"
     ],
     "Skill": [
         "People Management","Stakeholder Management","BI Governance &<br>KPI Standardization",
         "SQL","Python","Statistics","Excel",
         "Tableau","MicroStrategy","Streamlit",
-        "Automation","REST API",
+        "Analytics Automation","REST API","Python Application Packaging",
         "Fraud & Risk Analytics","Retail Analytics","Planning &<br>Replenishment Analytics","Quant Analytics"
     ]
 }
@@ -752,6 +752,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
