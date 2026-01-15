@@ -444,47 +444,89 @@ Profile_pic_i = Image.open(Profile_pic)
 
 
 # In[11]:
-r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5,7.5,9]
-theta = ['Data Analytics',
- 'SQL',
- 'Excel',
- 'Streamlit',
- 'Python',
- 'Tableau',
- 'Statistics',
- 'Selenium',
- 'MicroStrategy',
- 'Quant Analytics',
-'Leadership',
-'REST API',
-'Automation']
+# r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5,7.5,9]
+# theta = ['Data Analytics',
+#  'SQL',
+#  'Excel',
+#  'Streamlit',
+#  'Python',
+#  'Tableau',
+#  'Statistics',
+#  'Selenium',
+#  'MicroStrategy',
+#  'Quant Analytics',
+# 'Leadership',
+# 'REST API',
+# 'Automation']
 
 # Create a DataFrame and sort by Proficiency descending
-data = {'Skills': theta, 'Proficiency': r}
-df = pd.DataFrame(data).sort_values(by='Proficiency', ascending=False)
+# data = {'Skills': theta, 'Proficiency': r}
+# df = pd.DataFrame(data).sort_values(by='Proficiency', ascending=False)
 
 # Create the bar chart with a custom color scale
-fig = px.bar(df, x="Skills", y="Proficiency", color="Proficiency",
-            color_continuous_scale=[
-                "rgb(173, 255, 47)",
-                "rgb(0, 100, 0)"
-            ],
-            title="Skills Matrix")
+# fig = px.bar(df, x="Skills", y="Proficiency", color="Proficiency",
+#             color_continuous_scale=[
+#                 "rgb(173, 255, 47)",
+#                 "rgb(0, 100, 0)"
+#             ],
+#             title="Skills Matrix")
 
-# Add black borders to bars and bold labels on x-axis
-fig.update_traces(marker=dict(line=dict(color='black', width=1)))
-fig.update_xaxes(tickfont=dict(size=10, family='Arial Black'))
-fig.update_layout(showlegend=False, coloraxis_showscale=False,
-                 title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
-fig.update_layout(title_x=0.4,showlegend=False)
-fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
-fig.update_layout(height=270, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
-fig.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
+# # Add black borders to bars and bold labels on x-axis
+# fig.update_traces(marker=dict(line=dict(color='black', width=1)))
+# fig.update_xaxes(tickfont=dict(size=10, family='Arial Black'))
+# fig.update_layout(showlegend=False, coloraxis_showscale=False,
+#                  title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
+# fig.update_layout(title_x=0.4,showlegend=False)
+# fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
+# fig.update_layout(height=270, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
+# fig.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
+# fig.update_layout(
+#                   xaxis_title="<b>Skills</b>",  # Set x-axis title
+#                   yaxis_title="<b>Proficiency</b>",
+#                   xaxis_title_standoff=10,  # Adjust standoff for better spacing
+#                   xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
+skills_data = {
+    "Category": [
+        "BI & Analytics Leadership","BI & Analytics Leadership","BI & Analytics Leadership",
+        "Data & Analytics","Data & Analytics","Data & Analytics","Data & Analytics",
+        "BI Platforms","BI Platforms","BI Platforms",
+        "Automation & Engineering","Automation & Engineering",
+        "Domain Expertise"
+    ],
+    "Skill": [
+        "People Management","Stakeholder Management","BI Governance & KPI Standardization",
+        "SQL","Python","Statistics","Excel",
+        "Tableau","MicroStrategy","Streamlit",
+        "Automation","REST API",
+        "Quant Analytics"
+    ],
+    # Equal value → no ranking implied
+    "Value": [1] * 13
+}
+df_skills = pd.DataFrame(skills_data)
+fig = px.treemap(
+    df_skills,
+    path=["Category", "Skill"],
+    values="Value",
+    title="Skills Overview"
+)
+
+# ---- Styling to match your resume theme ----
+fig.update_traces(
+    textinfo="label",
+    hovertemplate="<b>%{label}</b><extra></extra>",
+    marker=dict(line=dict(color="black", width=1))
+)
+
 fig.update_layout(
-                  xaxis_title="<b>Skills</b>",  # Set x-axis title
-                  yaxis_title="<b>Proficiency</b>",
-                  xaxis_title_standoff=10,  # Adjust standoff for better spacing
-                  xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
+    title_font=dict(size=16, family="Arial Black"),
+    title_x=0.4,
+    margin=dict(l=0, r=0, t=30, b=0),
+    height=270,
+    width=700,
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)"
+)
 
 data = []
 for i in Professional_Experience.keys():
@@ -596,7 +638,7 @@ with tab1:
     # - """+necktie+""" Leadership | ★★★★
     # - """+robot+""" REST API | ★★★★
     # """)
-    # colsk2.plotly_chart(fig)
+    colsk2.plotly_chart(fig)
     colsk2.plotly_chart(fig2) 
 
     # Work Experience
@@ -688,6 +730,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
