@@ -523,7 +523,7 @@ fig.update_layout(
     title_x=0.4,
     margin=dict(l=0, r=0, t=30, b=0),
     height=270,
-    width=700,
+    width=1400,
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)"
 )
@@ -730,6 +730,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
