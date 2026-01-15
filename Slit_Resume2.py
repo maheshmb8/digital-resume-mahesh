@@ -501,7 +501,7 @@ skills_data = {
         "Fraud & Risk Analytics","Retail Analytics","BI","Quant Analytics"
     ],
     # Equal value → no ranking implied
-    "Value": [1] * 13
+    "Value": [1] * 16
 }
 df_skills = pd.DataFrame(skills_data)
 fig = px.treemap(
@@ -730,6 +730,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
