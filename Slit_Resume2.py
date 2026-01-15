@@ -498,7 +498,7 @@ skills_data = {
         "SQL","Python","Statistics","Excel",
         "Tableau","MicroStrategy","Streamlit",
         "Automation","REST API",
-        "Fraud & Risk Analytics","Retail Analytics","BI","Quant Analytics"
+        "Fraud & Risk Analytics","Retail Analytics","Planning &<br>Replenishment Analytics","Quant Analytics"
     ]
 }
 df_skills = pd.DataFrame(skills_data)
@@ -752,6 +752,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
