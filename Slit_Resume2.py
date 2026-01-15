@@ -575,7 +575,7 @@ fig2.update_layout(showlegend=False, coloraxis_showscale=False,
                  title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
 fig2.update_layout(title_x=0.3,showlegend=False)
 fig2.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
-fig2.update_layout(height=270, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
+fig2.update_layout(height=400, width=1400,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
 fig2.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
 fig2.update_layout(xaxis={'rangeselector':{'visible':False}})
 fig2.update_layout(
@@ -651,11 +651,12 @@ with tab1:
     # - """+robot+""" REST API | ★★★★
     # """)
     st.plotly_chart(fig)
-    st.plotly_chart(fig2) 
+    st.subheader(skills_emoji+" Skills")    
 
     # Work Experience
 
     st.subheader(workexp_emoji+" Work Experience")
+    st.plotly_chart(fig2)     
     st.write(right_point_emoji+right_point_emoji+" for Project details, visit next tab"+left_point_emoji+left_point_emoji)
     for i in Professional_Experience.keys():
         l1=str((Professional_Experience[i]['Role Name'],'|',Professional_Experience[i]['Company Name']))
@@ -742,6 +743,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
