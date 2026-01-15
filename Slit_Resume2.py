@@ -508,7 +508,7 @@ fig = px.treemap(
     df_skills,
     path=["Category", "Skill"],
     values="Value",
-    title="Skills Overview"
+    title="Core Competencies"
 )
 
 # ---- Styling to match your resume theme ----
@@ -625,7 +625,7 @@ with tab1:
 
     # Skills✬
     st.subheader(skills_emoji+" Skills")
-    colsk1,colsk2 = st.columns([1,1])
+    # colsk1,colsk2 = st.columns([1,1])
     # colsk1.write("""
     # - """+Coding_emoji+""" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬
     # - """+Coding_emoji+""" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★
@@ -638,8 +638,8 @@ with tab1:
     # - """+necktie+""" Leadership | ★★★★
     # - """+robot+""" REST API | ★★★★
     # """)
-    colsk1.plotly_chart(fig)
-    colsk2.plotly_chart(fig2) 
+    st.plotly_chart(fig)
+    st.plotly_chart(fig2) 
 
     # Work Experience
 
@@ -730,6 +730,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
