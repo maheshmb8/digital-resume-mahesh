@@ -584,18 +584,18 @@ with tab1:
     # Skills✬
     st.subheader(skills_emoji+" Skills")
     colsk1,colsk2 = st.columns([1,1])
-    colsk1.write("""
-    - """+Coding_emoji+""" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬
-    - """+Coding_emoji+""" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★
-    - """+chart_emoji+""" Excel | ★★★★✬
-    - """+chart_emoji+""" Tableau | ★★★★
-    - """+chart_emoji+""" MicroStrategy | ★★★
-    - """+books_emoji+""" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬
-    - """+chart_inc+""" Data Analytics | ★★★★
-    - """+chart_inc+""" Quant Analytics | ★★★
-    - """+necktie+""" Leadership | ★★★★
-    - """+robot+""" REST API | ★★★★
-    """)
+    # colsk1.write("""
+    # - """+Coding_emoji+""" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬
+    # - """+Coding_emoji+""" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★
+    # - """+chart_emoji+""" Excel | ★★★★✬
+    # - """+chart_emoji+""" Tableau | ★★★★
+    # - """+chart_emoji+""" MicroStrategy | ★★★
+    # - """+books_emoji+""" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬
+    # - """+chart_inc+""" Data Analytics | ★★★★
+    # - """+chart_inc+""" Quant Analytics | ★★★
+    # - """+necktie+""" Leadership | ★★★★
+    # - """+robot+""" REST API | ★★★★
+    # """)
     # colsk2.plotly_chart(fig)
     colsk2.plotly_chart(fig2) 
 
@@ -688,6 +688,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
