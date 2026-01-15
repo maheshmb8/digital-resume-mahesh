@@ -587,14 +587,15 @@ fig2.update_traces(
     hovertemplate="<b>%{y}</b><br>" +  # Display Role Name | Company Name
                   "Year Month: %{x:%Y %b}<br>")
 fig2.update_layout(
-    title={
-        'text': "Professional Experience Timeline",
-        'y': 0.95,          # Adjusts vertical position
-        'x': 0.5,           # Centers the title horizontally
-        'xanchor': 'center',
-        'yanchor': 'top',
-        'font': dict(size=16, family='Arial Black')
-    }
+    title_text="Professional Experience Timeline",
+    title_font=dict(size=16, family="Arial Black"),
+    title_x=0.5,               # 0.5 is the mathematical center
+    title_xanchor="center",    # Ensures the center of the text is at 0.5
+    margin=dict(l=0, r=0, t=50, b=0), # Increased t for spacing
+    height=400,
+    width=1400,
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)"
 )
 
 tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
@@ -752,6 +753,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
