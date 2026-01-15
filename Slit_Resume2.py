@@ -529,7 +529,17 @@ fig.update_layout(
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)"
 )
+# 1. Set the Title font size
+fig.update_layout(
+    title_font_size=24,
+    margin=dict(t=50, l=10, r=10, b=10)
+)
 
+# 2. Set the Label (Inside the boxes) font size
+fig.update_traces(
+    textfont_size=16,          # Sets a fixed font size for all labels
+    selector=dict(type='treemap')
+)
 data = []
 for i in Professional_Experience.keys():
     l1 = ' '.join([Professional_Experience[i]['Role Name'], '|', Professional_Experience[i]['Company Name']])
@@ -732,6 +742,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
