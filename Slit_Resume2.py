@@ -491,7 +491,7 @@ skills_data = {
         "Data & Analytics","Data & Analytics","Data & Analytics","Data & Analytics",
         "BI Platforms","BI Platforms","BI Platforms",
         "Automation & Engineering","Automation & Engineering",
-        "Domain Expertise","Domain Expertise","Domain Expertise"
+        "Domain Expertise","Domain Expertise","Domain Expertise","Domain Expertise"
     ],
     "Skill": [
         "People Management","Stakeholder Management","BI Governance & KPI Standardization",
@@ -730,6 +730,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
