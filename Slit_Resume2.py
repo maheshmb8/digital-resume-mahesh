@@ -651,7 +651,6 @@ with tab1:
     # - """+robot+""" REST API | ★★★★
     # """)
     st.plotly_chart(fig)
-    st.subheader(skills_emoji+" Skills")    
 
     # Work Experience
 
@@ -743,6 +742,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
