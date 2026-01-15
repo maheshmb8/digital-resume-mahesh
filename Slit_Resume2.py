@@ -508,7 +508,7 @@ fig = px.treemap(
     df_skills,
     path=["Category", "Skill"],
     values="Value",
-    title="Core Competencies"
+    title="Core Competencies",
         color="Category",
         color_discrete_sequence=px.colors.qualitative.Safe
 )
@@ -732,6 +732,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
