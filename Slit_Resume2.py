@@ -171,7 +171,7 @@ Professional_Experience = {
     "URL_Logo":"indira.jpg",
     "Role Name": "Team Lead, Quant Analytics",
     "From": "02/2024",
-    "To": "Present",
+    "To": "11/2024",
     "Job Location": "Bangalore, India",
     "Role Details": ORG0_Details,
     "Key Projects": {
@@ -752,6 +752,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
