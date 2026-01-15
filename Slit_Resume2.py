@@ -586,6 +586,16 @@ fig2.update_layout(
 fig2.update_traces(
     hovertemplate="<b>%{y}</b><br>" +  # Display Role Name | Company Name
                   "Year Month: %{x:%Y %b}<br>")
+fig2.update_layout(
+    title={
+        'text': "Professional Experience Timeline",
+        'y': 0.95,          # Adjusts vertical position
+        'x': 0.5,           # Centers the title horizontally
+        'xanchor': 'center',
+        'yanchor': 'top',
+        'font': dict(size=16, family='Arial Black')
+    }
+)
 
 tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
 
@@ -742,6 +752,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
