@@ -120,7 +120,7 @@ Short_Headline = f"""BI Manager with {Experience_yrs}+ years across global retai
 
 Awards = {
     "Prime Player Award" : {
-        "Organization" : "Saks Off Fifth",
+        "Organization" : "Saks Global",
         "Year" : "2022",
         "Month" : "12"
     },
@@ -190,9 +190,9 @@ Professional_Experience = {
     }
 },
     "ORG1" : {
-        "Company Name" : "Hudson's Bay Company",
-        "URL" : "https://www.hbc.com/",
-        "URL_Logo":"HBC.png",
+        "Company Name" : "Saks Global",
+        "URL" : "https://www.saksglobal.com/",
+        "URL_Logo":"Saks_Global_logo.png",
         "Role Name" : "Team Lead, Fraud Analytics",
         "From" : "09/2020",
         "To" : "12/2023",
@@ -752,6 +752,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
