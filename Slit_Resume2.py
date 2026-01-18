@@ -272,7 +272,7 @@ Professional_Experience = {
 email_emoji = emoji.emojize(':envelope:')
 phone_emoji = emoji.emojize(':telephone_receiver:')
 Linkedin_URL_emoji = emoji.emojize(':link:')
-git_emoji = emoji.emojize(':computer:')
+git_emoji = emoji.emojize(':man_technologist:')
 medium_emoji = emoji.emojize(':writing_hand:')
 Location_emoji = emoji.emojize(':house:')
 birthday_emoji = emoji.emojize(':birthday_cake:')
@@ -716,6 +716,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
