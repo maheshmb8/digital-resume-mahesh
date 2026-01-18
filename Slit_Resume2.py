@@ -592,9 +592,11 @@ with tab1:
             mime="application/octet-stream",
         )
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+email_emoji+' '+Email+' | '+phone_emoji+' '+Phone+'</p>',unsafe_allow_html=True)
-        st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">LinkedIn</a> | 'f'{Location_emoji} {Location}'f'</p>',unsafe_allow_html=True)
-        st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{git_emoji} <a href="{git_url}" style="color:#ffffff;text-decoration:none;">GitHub</a> | 'f'{medium_emoji} <a href="{medium_url}" style="color:#ffffff;text-decoration:none;">Medium</a>'f'</p>',unsafe_allow_html=True)
-        st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+birthday_emoji+' '+birthdate+'</p>',unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">LinkedIn</a> | 'f'{git_emoji} <a href="{git_url}" style="color:#ffffff;text-decoration:none;">GitHub</a> | 'f'{medium_emoji} <a href="{medium_url}" style="color:#ffffff;text-decoration:none;">Medium</a>'f'</p>',unsafe_allow_html=True)
+        # st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">LinkedIn</a> | 'f'{Location_emoji} {Location}'f'</p>',unsafe_allow_html=True)
+        # st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{git_emoji} <a href="{git_url}" style="color:#ffffff;text-decoration:none;">GitHub</a> | 'f'{medium_emoji} <a href="{medium_url}" style="color:#ffffff;text-decoration:none;">Medium</a>'f'</p>',unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Location_emoji} {Location} | {birthday_emoji} {birthdate}'f'</p>',unsafe_allow_html=True)
+        # st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+birthday_emoji+' '+birthdate+'</p>',unsafe_allow_html=True)
 #         st.write(email_emoji, Email,'|',phone_emoji,Phone)
 #         st.write(Linkedin_URL_emoji, Linkedin_URL,'|',Location_emoji,Location)
     st.write("#")    
@@ -716,6 +718,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
