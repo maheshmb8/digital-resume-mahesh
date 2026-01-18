@@ -326,128 +326,12 @@ with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
 
-# In[8]:
-
-
-#Streamlit top Markdows
-# st.markdown(""" <style>
-# #MainMenu {visibility: hidden;}
-# footer {visibility: hidden;}
-# </style> """, unsafe_allow_html=True)
-# st.markdown("""
-#         <style>
-#                .css-18e3th9 {
-#                     padding-top: 0rem;
-#                     padding-bottom: 10rem;
-#                     padding-left: 5rem;
-#                     padding-right: 5rem;
-#                 }
-#                .css-1d391kg {
-#                     padding-top: 0rem;
-#                     padding-right: 1rem;
-#                     padding-bottom: 3.5rem;
-#                     padding-left: 1rem;
-#                 }
-#         </style>
-#         """, unsafe_allow_html=True)
-
-# st.markdown("""
-#     <style>
-#     [data-testid=column]:nth-of-type(1) [data-testid=stVerticalBlock]{
-#         gap: 0rem;
-#     }
-#     </style>
-#     """,unsafe_allow_html=True)
-
-# hide_full_screen = '''
-# <style>
-# .element-container:nth-child(3) .overlayBtn {visibility: hidden;}
-# .element-container:nth-child(12) .overlayBtn {visibility: hidden;}
-# </style>
-# '''
-
-# st.markdown(hide_full_screen, unsafe_allow_html=True) 
-
-# hide_img_fs = '''
-# <style>
-# button[title="View fullscreen"]{
-#     visibility: hidden;}
-# </style>
-# '''
-
-# st.markdown(hide_img_fs, unsafe_allow_html=True)
-
 with open(Pdf_Resume,'rb') as pdf_file:
     Pdf_Resume_bn = pdf_file.read()
 
 Profile_pic_i = Image.open(Profile_pic)
 
-# password = open('Pwd.txt','r').read()
 
-
-# In[38]:
-
-
-# text_input_container = st.empty()
-# t = text_input_container.text_input("Enter Password",type='password')
-
-
-# if t==password:
-#     pass
-# else:
-#     if len(t)>0:
-#         st.caption('Incorrect Password entered')
-#     else:
-#         st.write('Enter Password ...')
-#         st.stop()
-#     sys.exit()
-
-# if t != "":
-#     text_input_container.empty()
-
-
-# In[11]:
-# r = [9, 8, 8, 8, 8, 8, 7, 7, 6, 6,7.5,7.5,9]
-# theta = ['Data Analytics',
-#  'SQL',
-#  'Excel',
-#  'Streamlit',
-#  'Python',
-#  'Tableau',
-#  'Statistics',
-#  'Selenium',
-#  'MicroStrategy',
-#  'Quant Analytics',
-# 'Leadership',
-# 'REST API',
-# 'Automation']
-
-# Create a DataFrame and sort by Proficiency descending
-# data = {'Skills': theta, 'Proficiency': r}
-# df = pd.DataFrame(data).sort_values(by='Proficiency', ascending=False)
-
-# Create the bar chart with a custom color scale
-# fig = px.bar(df, x="Skills", y="Proficiency", color="Proficiency",
-#             color_continuous_scale=[
-#                 "rgb(173, 255, 47)",
-#                 "rgb(0, 100, 0)"
-#             ],
-#             title="Skills Matrix")
-
-# # Add black borders to bars and bold labels on x-axis
-# fig.update_traces(marker=dict(line=dict(color='black', width=1)))
-# fig.update_xaxes(tickfont=dict(size=10, family='Arial Black'))
-# fig.update_layout(showlegend=False, coloraxis_showscale=False,
-#                  title_font=dict(size=16, family='Arial Black'))  # Hide the color scale
-# fig.update_layout(title_x=0.4,showlegend=False)
-# fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)','paper_bgcolor': 'rgba(0, 0, 0, 0)',})
-# fig.update_layout(height=270, width=700,showlegend=False,margin=dict(l=0, r=0, t=28, b=0))
-# fig.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
-# fig.update_layout(
-#                   xaxis_title="<b>Skills</b>",  # Set x-axis title
-#                   yaxis_title="<b>Proficiency</b>",
-#                   xaxis_title_standoff=10,  # Adjust standoff for better spacing
-#                   xaxis_tickfont=dict(size=10, family='Arial Black'))  # Bold x-axis labels
 skills_data = {
     "Category": [
         "BI & Analytics Leadership","BI & Analytics Leadership","BI & Analytics Leadership",
@@ -563,17 +447,6 @@ fig2.update_layout(
 tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
 
 
-# In[17]:
-# hostname=socket.gethostname()
-# IPAddr=socket.gethostbyname(hostname)
-# uuid_str = uuid.uuid1()
-# time_str = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
-# ano_data = ['HN: ',hostname,'IP: ',IPAddr,'UUID: ',uuid_str,'Time: ',time_str]
-
-# with open(r'Data_Ref.txt', 'a') as fp:
-#     fp.write("\n"+str(ano_data))
-#     fp.close()
-
 # Resume Front
 with tab1:
     col1, col2 = st.columns([2,7])
@@ -593,12 +466,7 @@ with tab1:
         )
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+email_emoji+' '+Email+' | '+phone_emoji+' '+Phone+'</p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">LinkedIn</a> | 'f'{git_emoji} <a href="{git_url}" style="color:#ffffff;text-decoration:none;">GitHub</a> | 'f'{medium_emoji} <a href="{medium_url}" style="color:#ffffff;text-decoration:none;">Medium</a>'f'</p>',unsafe_allow_html=True)
-        # st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">LinkedIn</a> | 'f'{Location_emoji} {Location}'f'</p>',unsafe_allow_html=True)
-        # st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{git_emoji} <a href="{git_url}" style="color:#ffffff;text-decoration:none;">GitHub</a> | 'f'{medium_emoji} <a href="{medium_url}" style="color:#ffffff;text-decoration:none;">Medium</a>'f'</p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Location_emoji} {Location} | {birthday_emoji} {birthdate}'f'</p>',unsafe_allow_html=True)
-        # st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+birthday_emoji+' '+birthdate+'</p>',unsafe_allow_html=True)
-#         st.write(email_emoji, Email,'|',phone_emoji,Phone)
-#         st.write(Linkedin_URL_emoji, Linkedin_URL,'|',Location_emoji,Location)
     st.write("#")    
     st.divider()
     # About Streamlit Resume
@@ -613,19 +481,6 @@ with tab1:
 
     # Skills✬
     st.subheader(skills_emoji+" Skills")
-    # colsk1,colsk2 = st.columns([1,1])
-    # colsk1.write("""
-    # - """+Coding_emoji+""" SQL : Azure, Redshift, Snowflake, Hadoop | ★★★★✬
-    # - """+Coding_emoji+""" Python : Pandas, Selenium, Streamlit, Numpy, Plotly | ★★★★
-    # - """+chart_emoji+""" Excel | ★★★★✬
-    # - """+chart_emoji+""" Tableau | ★★★★
-    # - """+chart_emoji+""" MicroStrategy | ★★★
-    # - """+books_emoji+""" Statistics : Hypothesis testing, AB Testing, Probabiltity | ★★★✬
-    # - """+chart_inc+""" Data Analytics | ★★★★
-    # - """+chart_inc+""" Quant Analytics | ★★★
-    # - """+necktie+""" Leadership | ★★★★
-    # - """+robot+""" REST API | ★★★★
-    # """)
     st.plotly_chart(fig)
 
     # Work Experience
@@ -644,15 +499,8 @@ with tab1:
         for j in Professional_Experience[i]['Key Projects']:
             if Professional_Experience[i]['Key Projects'][j]['Project Name'] != '':
                 l4 = Professional_Experience[i]['Key Projects'][j]['Project Name']
-#                 l5 = Professional_Experience[i]['Key Projects'][j]['Details']
-#                 l6 = Professional_Experience[i]['Key Projects'][j]['Savings']
-#                 l7 = Professional_Experience[i]['Key Projects'][j]['Tools']
                 col3,col4 = st.columns([1,90])
                 col4.write('- '+l4)
-#                 with st.expander("See explanation"):
-#                     st.caption(details_emoji+' : '+l5)
-#                     st.caption(savings_emoji+' : '+l6)
-#                     st.caption(tools_emoji+' : '+l7)
         st.caption('')
     st.write(right_point_emoji+right_point_emoji+" for Project details, visit next tab"+left_point_emoji+left_point_emoji)
     # Education 
@@ -684,70 +532,3 @@ with tab2:
                         st.caption(savings_emoji+' : '+l6)
                         st.caption(tools_emoji+' : '+l7)
             st.caption('')
-            
-
-
-# In[14]:
-
-
-# tab = st.selectbox('Tab to shorten and make scrollable:', [1])
-# css=f'''
-# div.stTabs > div > div:nth-of-type({tab+1}) {{
-#     color: red;
-#     height: 10px;
-#     overflow-y: scroll;
-#     overflow-x: hidden;
-# }}
-# '''
-# st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
-
-
-# In[26]:
-
-
-# import nbformat
-# from nbconvert import PythonExporter
-# My_Loc = r'C:\Users\mahes\Streamlit_Resume'
-# def convertNotebook(notebookPath, modulePath):
-
-#     with open(notebookPath) as fh:
-#         nb = nbformat.reads(fh.read(), nbformat.NO_CONVERT)
-#     exporter = PythonExporter()
-#     source, meta = exporter.from_notebook_node(nb)
-#     with open(modulePath, 'w+') as fh:
-#         fh.write(source)
-        
-# convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
