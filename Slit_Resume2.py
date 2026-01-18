@@ -41,45 +41,6 @@ import plotly.figure_factory as ff
 
 # # In[23]:
 bot_token = '7470750444:AAEVSp9woUIREXs7RiBmgRgaQF9S4NGMNj4'
-# chat_id = 123
-# def telegram_send_message(message,bot_token=bot_token,chat_id = group_chat_id):
-#     """
-#     Sends a message via Telegram bot API.
-
-#     Args:
-#     - bot_token (str): The API token of your Telegram bot.
-#     - chat_id (int or str): The chat ID where the message should be sent. 
-#                             Use negative values for group chat IDs.
-#     - message (str): The message to be sent.
-    
-#     Returns:
-#     - dict: JSON response from the Telegram API.
-#     """
-#     url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
-#     params = {
-#         'chat_id': chat_id,
-#         'text': message
-#     }
-#     response = requests.get(url, params=params)
-#     return response.json()
-
-# response = requests.get('https://ipinfo.io')
-# data = response.json()
-# # Extract relevant data
-# ip_address = data['ip']
-# city = data['city']
-# region = data['region']
-# country = data['country']
-# isp = data.get('org', 'Unknown')
-# timezone = data.get('timezone', 'Unknown')
-# hostname = data.get('hostname', 'Unknown')
-# organization = data.get('org', 'Unknown')
-# visit_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-# txt_file_path = 'visitor_data.txt'
-# line = f"DR,{ip_address},{city},{region},{country},{isp},{timezone},{hostname},{visit_time}\n"
-# st.write(line)
-# telegram_send_message(message=line)
-# telegram_send_message(message='url opened',chat_id=704541819)
 
 so5_logo = Image.open(f"Resume_IC.png")
 Profile_pic = (f"Profile_Pic.png")
@@ -95,6 +56,8 @@ Current_Org_from = "12/2024"
 Email = "maheshmbathija81193@gmail.com"
 Phone = "+91 8951861604"
 Linkedin_URL = "https://www.linkedin.com/in/maheshm8"
+git_url = "https://github.com/maheshmb8"
+medium_url = "https://medium.com/@maheshmbathija81193"
 Location = "Bangalore, India"
 birthdate = "November 1993"
 Experience_yrs = 10
@@ -309,8 +272,6 @@ Professional_Experience = {
 email_emoji = emoji.emojize(':envelope:')
 phone_emoji = emoji.emojize(':telephone_receiver:')
 Linkedin_URL_emoji = emoji.emojize(':link:')
-# Linkedin_URL_emoji = "\U0002197"
-# \U000FE0F
 Location_emoji = emoji.emojize(':house:')
 birthday_emoji = emoji.emojize(':birthday_cake:')
 office_emoji = emoji.emojize(':office_building:')
@@ -630,6 +591,7 @@ with tab1:
         )
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+email_emoji+' '+Email+' | '+phone_emoji+' '+Phone+'</p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">{Linkedin_URL_emoji} <a href="{Linkedin_URL}" style="color:#ffffff;text-decoration:none;">{Linkedin_URL}</a> | {Location_emoji} {Location}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'f'{Linkedin_URL_emoji} <a href="{git_url}" style="color:#ffffff;text-decoration:none;">{git_url}</a> | 'f'{Linkedin_URL_emoji} <a href="{medium_url}" style="color:#ffffff;text-decoration:none;">{medium_url}</a>'f'</p>',unsafe_allow_html=True)
         st.markdown(f'<p style="color:#ffffff;font-size:16px;margin-bottom:0;text-align:left;">'+birthday_emoji+' '+birthdate+'</p>',unsafe_allow_html=True)
 #         st.write(email_emoji, Email,'|',phone_emoji,Phone)
 #         st.write(Linkedin_URL_emoji, Linkedin_URL,'|',Location_emoji,Location)
@@ -752,6 +714,7 @@ with tab2:
 #         fh.write(source)
         
 # convertNotebook(f'{My_Loc}\Slit_Resume2.ipynb',f'{My_Loc}\Slit_Resume2.py')
+
 
 
 
