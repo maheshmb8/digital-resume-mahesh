@@ -1,0 +1,32 @@
+name: Streamlit Keep Alive
+
+on:
+  schedule:
+    # Runs at 05:00 and 17:00 UTC every day
+    - cron: '0 5,17 * * *'
+  workflow_dispatch: # Allows you to trigger it manually button in Actions tab
+
+jobs:
+  wake_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Access Streamlit App (The Ping)
+        run: |
+          # The -L follows redirects, -s is silent, -I just gets headers
+          curl -L -s -I https://digital-resume-mahesh.streamlit.app/ | head -n 1
+
+      - name: Update Heartbeat File (The Commit)
+        run: |
+          echo "Last automated check: $(date)" > heartbeat.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add heartbeat.txt
+          # The "|| exit 0" prevents the action from failing if there are no changes
+          git commit -m "refactor: automated maintenance check" || exit 0
+          git push
