@@ -72,7 +72,7 @@ HE_From = "2016"
 HE_To = "2019"
 Edu_Specialization = "Supply Chain & Logistics"
 
-Profile = f"""BI Manager with {str(Experience_yrs)} +years of experience across global retail analytics, fraud & risk, and data-driven operations. 
+Profile = f"""BI & MNR Analytics Manager with {str(Experience_yrs)} +years of experience across global retail analytics, fraud & risk, and data-driven operations. 
 Currently leading a 9-member Business Intelligence team delivering standardized, scalable BI solutions across Planning, Supply Chain, Digital Operations, and 
 Finance. Strong in SQL, Python, and modern BI platforms, with a track record of driving reporting standardization, automation, and self-service analytics. 
 Known for building high-performing teams and leading changes that improve decision quality, efficiency, and business impact."""
