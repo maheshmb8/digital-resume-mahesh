@@ -50,7 +50,7 @@ First_Name = "Mahesh M"
 Last_Name = "Bathija"
 Full_Name = First_Name+' '+Last_Name
 Current_Designation = "Manager"
-Current_Team = "Business Intelligence"
+Current_Team = "Business Intelligence Reporting & MNR Analytics"
 Current_Organization = "Saks Global"
 Current_Org_from = "12/2024"
 Email = "maheshmbathija81193@gmail.com"
@@ -95,7 +95,7 @@ Awards = {
 }
 
 
-ORG5_Details = """BI Manager owning enterprise analytics and reporting strategy while leading a global team supporting core retail decision-making functions."""
+ORG5_Details = """BI & MNR Manager owning enterprise analytics and reporting strategy while leading a global team supporting core retail decision-making functions."""
 ORG0_Details = """My Role - Lead and collaborate with the team to build,backtest, and deploy live algorithmic trading strategies\nfor stocks."""
 ORG1_Details = """About Fraud Analytics Team – Detecting fraud, boosting revenue through trend identification and mitigation\n
 Led a successful team of 2 analysts, collaborating on multiple projects and cutting false referrals by 35%."""
@@ -108,7 +108,7 @@ Professional_Experience = {
     "Company Name": "Saks Global",
     "URL": "https://www.saksglobal.com/",
     "URL_Logo":"Saks_Global_logo.png",
-    "Role Name": "Manager, BI Reporting",
+    "Role Name": "Manager, BI Reporting & MNR Analytics",
     "From": "12/2024",
     "To": "Present",
     "Job Location": "Bangalore, India",
@@ -125,6 +125,12 @@ Professional_Experience = {
             "Details": """Led a cross-functional team to design and deliver an AI-based image and pose analytics solution to assess product imagery quality and alignment with catalog standards. Owned problem definition, delivery roadmap, stakeholder alignment, and integration into existing analytics workflows, enabling scalable adoption beyond traditional BI use cases.""",
             "Savings": "Reduced manual image review effort and improved catalog quality consistency at scale, 91% Accuracy",
             "Tools": "Python | Computer Vision | MediaPipe | SQL | BI Dashboards"
+        },
+        "Project_3": {
+            "Project Name": "Architected a Scalable Analytics Framework",
+            "Details": """Directed the development of a metadata-driven Python (Streamlit) and Snowflake engine utilizing dynamic SQL and server-side caching; transitioned the org from static reporting to an automated, high-performance architecture for high-volume retail datasets.""",
+            "Savings": "Accelerated reporting speeds for high-volume datasets and enabled 100% automated, scalable data ingestion",
+            "Tools": "Python (Streamlit) | Snowflake Snowpark | Dynamic SQL | Server-Side Caching"
         }
     }
 },
