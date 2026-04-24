@@ -79,7 +79,7 @@ Known for building high-performing teams and leading changes that improve decisi
 
 E_resume = """I have created this impressive "E-Resume" using Python and the Streamlit Framework. It serves as a platform to showcase my exceptional Python and Streamlit skillsets. The first tab elegantly presents my detailed resume, while the second tab showcases a collection of my accomplished projects, reflecting my proficiency and experience. I recommend viewing this E-Resume on a desktop for the best experience, as the interactive features and visualizations are optimized for larger screens, ensuring a smoother and more detailed presentation of my skills and projects."""
 
-Short_Headline = f"""BI Manager with {Experience_yrs}+ years across global retail analytics, fraud & risk, and data-driven operations. Currently leading a global BI team delivering scalable analytics and automation for core retail decision-making."""
+Short_Headline = f"""BI & MNR Analytics Manager with {Experience_yrs}+ years across global retail analytics, fraud & risk, and data-driven operations. Currently leading a global BI team delivering scalable analytics and automation for core retail decision-making."""
 
 Awards = {
     "Prime Player Award" : {
