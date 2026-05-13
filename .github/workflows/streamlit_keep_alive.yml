@@ -2,26 +2,32 @@ name: Streamlit Keep Alive
 
 on:
   schedule:
-    # Runs at 05:00 and 17:00 UTC (10:30 AM and 10:30 PM IST)
     - cron: '0 5,17 * * *'
   workflow_dispatch: 
+
+env:
+  # This removes the Node.js warning and opts into the newer runner
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   wake_and_push:
     runs-on: ubuntu-latest
+    permissions:
+      # Explicitly giving the bot permission to write to the repo
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches all history so the push isn't "shallow"
 
       - name: Access App with Browser Spoofing
         run: |
-          # Using a full Chrome User-Agent and removing the -I (Fetch full page instead of just headers)
           curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
           https://digital-resume-mahesh.streamlit.app/
 
-      - name: Update Heartbeat with Random Salt
+      - name: Update Heartbeat
         run: |
-          # Adding a random number ensures the file hash always changes significantly
           echo "Last Maintenance: $(date)" > heartbeat.txt
           echo "Salt: $RANDOM" >> heartbeat.txt
 
@@ -30,5 +36,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add heartbeat.txt
+          # Using --allow-empty as a safety net and pulling before pushing
           git commit -m "chore: automated heartbeat update [skip ci]" || exit 0
-          git push
+          git pull --rebase origin main
+          git push origin main
