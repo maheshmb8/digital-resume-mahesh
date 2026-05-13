@@ -2,9 +2,9 @@ name: Streamlit Keep Alive
 
 on:
   schedule:
-    # Runs at 05:00 and 17:00 UTC every day
+    # Runs at 05:00 and 17:00 UTC (10:30 AM and 10:30 PM IST)
     - cron: '0 5,17 * * *'
-  workflow_dispatch: # Allows you to trigger it manually button in Actions tab
+  workflow_dispatch: 
 
 jobs:
   wake_and_push:
@@ -13,20 +13,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Access Streamlit App (The Ping)
+      - name: Access App with Browser Spoofing
         run: |
-          # The -L follows redirects, -s is silent, -I just gets headers
-          curl -L -s -I https://digital-resume-mahesh.streamlit.app/ | head -n 1
+          # Using a full Chrome User-Agent and removing the -I (Fetch full page instead of just headers)
+          curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+          https://digital-resume-mahesh.streamlit.app/
 
-      - name: Update Heartbeat File (The Commit)
+      - name: Update Heartbeat with Random Salt
         run: |
-          echo "Last automated check: $(date)" > heartbeat.txt
+          # Adding a random number ensures the file hash always changes significantly
+          echo "Last Maintenance: $(date)" > heartbeat.txt
+          echo "Salt: $RANDOM" >> heartbeat.txt
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add heartbeat.txt
-          # The "|| exit 0" prevents the action from failing if there are no changes
-          git commit -m "refactor: automated maintenance check" || exit 0
+          git commit -m "chore: automated heartbeat update [skip ci]" || exit 0
           git push
