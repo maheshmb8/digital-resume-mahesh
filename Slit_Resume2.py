@@ -60,7 +60,7 @@ git_url = "https://github.com/maheshmb8"
 medium_url = "https://medium.com/@maheshmbathija81193"
 Location = "Bangalore, India"
 birthdate = "November 1993"
-Experience_yrs = 10
+Experience_yrs = 12
 
 
 Skills = ['Python','SQL','Tableau','Excel','Streamlit','Statistics','Selenium','Team Management','Leadership','Data Analytics','Quant Analytics']
