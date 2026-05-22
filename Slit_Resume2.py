@@ -420,7 +420,7 @@ for i in Professional_Experience.keys():
     data.append([l1, l2s,l2c, l3])
 df = pd.DataFrame(data, columns=['Task', 'Start','Finish', 'Role Details'])
 df['Start'] = pd.to_datetime('01/' + df['Start'], format='%d/%m/%Y')
-df['Finish'] = df['Finish'].apply(lambda x: (datetime.datetime.today() + timedelta(days=60)) if x == 'Present' else pd.to_datetime('01/' + x, format='%d/%m/%Y'))
+df['Finish'] = df['Finish'].apply(lambda x: (datetime.datetime.today() + timedelta(days=91)) if x == 'Present' else pd.to_datetime('01/' + x, format='%d/%m/%Y'))
 df['Finish'] = pd.to_datetime(df['Finish'].astype(str).str[:10],format='%Y-%m-%d')
 df['Start'] = df['Start'].astype('str')
 df['Finish'] = df['Finish'].astype('str')
