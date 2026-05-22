@@ -131,7 +131,26 @@ Professional_Experience = {
             "Details": """Directed the development of a metadata-driven Python (Streamlit) and Snowflake engine utilizing dynamic SQL and server-side caching; transitioned the org from static reporting to an automated, high-performance architecture for high-volume retail datasets.""",
             "Savings": "Accelerated reporting speeds for high-volume datasets and enabled 100% automated, scalable data ingestion",
             "Tools": "Python (Streamlit) | Snowflake Snowpark | Dynamic SQL | Server-Side Caching"
+        },
+        "Project_4": {
+            "Project Name": "Broken Image Detection & Engineering",
+            "Details": """Developed a production-scale Computer Vision pipeline to identify broken, duplicate, and low-quality images in retail catalogs. The system utilizes perceptual hashing (pHash), Laplacian variance, and dominant color analysisto automate visual audits. Engineered with multithreaded processing and HTTP backoff strategies, the solutionensured high data integrity while reducing annual manual effort by 700+ hours""",
+            "Savings": "Reduced manual image review effort by 700+ hrs",
+            "Tools": "Python | pHash"
+        },
+        "Project_5": {
+            "Project Name": "Retail Audit Automation Engine",
+            "Details": """Engineered an enterprise data reconciliation pipeline to automate compliance audits for merchandising and buying operations. The system ingests nested payloads via Freshservice REST APIs, structures unorganized inputs into Pandas DataFrames, and cross-references transactions against a Snowflake data warehouse. By processing a matrix of 50+ custom checkpoints (matching item IDs, costs, and dates) using parallel thread pools and localized DuckDB relational joins, the solution isolates workflow anomalies and auto-generates multi-sheet exception scorecards""",
+            "Savings": "reducing annual manual auditing effort by 1,500+ hours",
+            "Tools": "Python | Rest API"
+        },
+        "Project_6": {
+            "Project Name": "PagePulse, SEO Automation",
+            "Details": """Developed a Python (Tkinter) desktop tool to automate high-volume SEO metric retrieval, replacing manual API workflows and spreadsheet lookups. The application features a GUI for bulk URL processing, extracting impressions, clicks, and CTR into structured Excel reports. By implementing rate-limiting, batching, and progress tracking, the tool accelerated analysis for non-technical users and reduced annual manual effort by 500+ hours""",
+            "Savings": " the tool accelerated analysis for non-technical users and reduced annual manual effort by 500+ hours",
+            "Tools": "Python | Tkinter | Rest API"
         }
+
     }
 },
 "ORG0": {
