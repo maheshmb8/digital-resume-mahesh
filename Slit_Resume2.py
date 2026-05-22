@@ -386,9 +386,9 @@ fig = px.treemap(
 
 # ---- Styling to match your resume theme ----
 fig.update_traces(
-    # textinfo="label",
-    textinfo="Skills",
-    hovertemplate=f"<b>%{label}</b><extra></extra>",
+    textinfo="label",
+    # textinfo="Skills",
+    hovertemplate="<b>%{label}</b><extra></extra>",
     marker=dict(line=dict(color="black", width=1))
 )
 
