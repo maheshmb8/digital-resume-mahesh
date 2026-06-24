@@ -24,6 +24,7 @@
 
 #!/usr/bin/env python
 import streamlit as st ######
+
 import emoji
 from PIL import Image
 import datetime
@@ -558,3 +559,4 @@ with tab2:
                         st.caption(savings_emoji+' : '+l6)
                         st.caption(tools_emoji+' : '+l7)
             st.caption('')
+
