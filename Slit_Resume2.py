@@ -41,11 +41,14 @@ import plotly.figure_factory as ff
 from google import genai  # Add this package update
 import re
 
+os.environ.pop("GOOGLE_GENAI_USE_VERTEXAI", None)
+
 if "GEMINI_API_KEY" in st.secrets:
-    client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
+    # Explicitly pass the string variable cleanly
+    api_key_str = str(st.secrets["GEMINI_API_KEY"]).strip().strip('"').strip("'")
+    client = genai.Client(api_key=api_key_str)
 else:
     client = None
-
 
 # # In[23]:
 bot_token = '7470750444:AAEVSp9woUIREXs7RiBmgRgaQF9S4NGMNj4'
