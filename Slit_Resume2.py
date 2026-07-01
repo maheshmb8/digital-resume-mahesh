@@ -38,6 +38,13 @@ import plotly.express as px
 import base64
 from datetime import timedelta
 import plotly.figure_factory as ff
+from google import genai  # Add this package update
+import re
+
+if "GEMINI_API_KEY" in st.secrets:
+    client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
+else:
+    client = None
 
 
 # # In[23]:
@@ -471,7 +478,8 @@ fig2.update_layout(
     plot_bgcolor="rgba(0,0,0,0)"
 )
 
-tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
+# tab1, tab2 = st.tabs([resume_tab_emoji+" Resume", building_construction+" Projects"])
+tab1, tab2, tab3 = st.tabs([resume_tab_emoji + " Resume", building_construction + " Projects",robot + " AI ATS Matcher"])
 
 
 # Resume Front
@@ -560,3 +568,84 @@ with tab2:
                         st.caption(tools_emoji+' : '+l7)
             st.caption('')
 
+with tab3:
+    st.subheader(robot + " AI Role Alignment Scanner")
+    st.write("Paste a job description below, and Gemini AI will parse my background against your technical requirements.")
+    
+    if not client:
+        st.error("⚠️ Gemini API configuration missing. Ensure 'GEMINI_API_KEY' is saved in your Streamlit secrets dashboard.")
+    else:
+        # Recruiter text input framework
+        jd_input = st.text_area(
+            "Paste Job Description Here:", 
+            height=250, 
+            placeholder="Looking for a BI Manager / Analytics Lead proficient in SQL, Python, Snowflake..."
+        )
+        
+        if st.button("Evaluate Candidate Fit") and jd_input:
+            with st.spinner("Analyzing candidate mapping profile..."):
+                
+                # Bundle all top-level variables into a single contextual profile block
+                resume_context = f"""
+                Candidate Name: {Full_Name}
+                Target Category: {Current_Designation}, {Current_Team} at {Current_Organization}
+                Profile Executive Summary: {Profile}
+                Technical Competencies: {', '.join(Skills)}
+                Full Career Record Structure: {str(Professional_Experience)}
+                """
+                
+                # Custom programmatic prompt engineered for clean key/value outputs
+                prompt = f"""
+                You are a senior technical corporate recruiter. Evaluate the following candidate dataset against the open target Job Description (JD).
+                
+                Candidate Record:
+                {resume_context}
+                
+                Open Job Description:
+                {jd_input}
+                
+                Provide your precise analysis in the following strict plain-text token format. Do not put markdown inside the values:
+                SCORE: [Provide a realistic evaluation index percentage integer strictly from 0 to 100 based on technical alignment and experience level]
+                FEEDBACK: [A concise, objective 2-sentence executive summary detailing why the candidate fits or highlighting any technical system gap]
+                MATCHES: [A simple comma-separated list of the top 5 overlapping technical tools or functional capabilities found in both the resume and the JD]
+                """
+                
+                try:
+                    # Request generation utilizing the hyper-fast Gemini Flash model variant
+                    response = client.models.generate_content(
+                        model='gemini-2.5-flash',
+                        contents=prompt
+                    )
+                    
+                    raw_result = response.text
+                    
+                    # Programmatic regex filtering to parse values cleanly
+                    score_match = re.search(r"SCORE:\s*(\d+)", raw_result)
+                    feedback_match = re.search(r"FEEDBACK:\s*(.*)", raw_result)
+                    matches_match = re.search(r"MATCHES:\s*(.*)", raw_result)
+                    
+                    match_percentage = int(score_match.group(1)) if score_match else 0
+                    feedback_text = feedback_match.group(1).strip() if feedback_match else "Processing completed successfully."
+                    overlapping_skills = matches_match.group(1).strip() if matches_match else ""
+                    
+                    st.write("---")
+                    col_metric, col_status = st.columns([1, 2])
+                    
+                    with col_metric:
+                        st.metric(label="ATS Match Rating", value=f"{match_percentage}%")
+                        
+                    with col_status:
+                        if match_percentage >= 75:
+                            st.success(f"🟢 **Strong Alignment!** {feedback_text}")
+                        elif match_percentage >= 50:
+                            st.warning(f"🟡 **Partial Alignment.** {feedback_text}")
+                        else:
+                            st.error(f"🔴 **Low Keyword Alignment.** {feedback_text}")
+                    
+                    if overlapping_skills:
+                        st.write("### Key Technical Overlaps:")
+                        badges = " ".join([f"`{skill.strip().upper()}`" for skill in overlapping_skills.split(",") if skill.strip()])
+                        st.markdown(badges)
+                        
+                except Exception as e:
+                    st.error(f"AI Generation Interrupted: {e}")
